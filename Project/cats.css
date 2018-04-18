@@ -42,29 +42,31 @@ section {
   font-size: 4vw;
   padding: 2vw;
 }
-section:first-of-type {
+section:first-of-type{
   margin-top: 110vh;
+}
+section:second-of-type {
   text-transform: uppercase;
   font-size: 3vw;
 }
-section:first-of-type h1 {
-  margin-top: 350px;
+section:second-of-type h1 {
+  margin-top: 30px;
 }
-section:first-of-type, section.pop {
+section:second-of-type, section.pop {
   color: #fff;
   text-shadow: 0 0 5px rgba(0,0,0,0.4);
 }
-section:nth-of-type(even) {
+section:nth-of-type(odd) {
   background: #fff;
 }
-section:nth-of-type(1) {
+section:nth-of-type(2) {
   height: auto;
 	background-image: url(_DSC3455.jpg);
 }
-section:nth-of-type(3) {
+section:nth-of-type(4) {
 	background-image: url(_DSC3491.jpg);
 }
-section:nth-of-type(5) {
+section:nth-of-type(6) {
 	background-image: url(_DSC3553.jpg);
 }
 .left{
@@ -113,7 +115,7 @@ section:nth-of-type(5) {
   font-weight:100;
   text-shadow: 0 0 5px rgba(0,0,0,0.4);
   font-size: 1.9rem;
-  margin: 5%;
+  margin: 2%;
   padding: 0;
 }
 .insideWhite h2{
@@ -172,4 +174,60 @@ section:nth-of-type(5) {
 .about3 h2{
   margin-left: 0;
   float:left;
+}
+.shadowPlay
+{
+  text-shadow: 0px 0px 3px rgba(255, 248, 220, 0.26),
+    0px 3px 3px rgba(133, 133, 133, 0.25),
+    2px 6px 3px rgba(133, 133, 133, 0.24),
+    4px 9px 3px rgba(133, 133, 133, 0.23),
+    6px 12px 3px rgba(133, 133, 133, 0.22),
+    8px 15px 3px rgba(133, 133, 133, 0.21),
+    10px 18px 3px rgba(133, 133, 133, 0.2),
+    12px 21px 3px rgba(133, 133, 133, 0.19),
+    14px 24px 3px rgba(133, 133, 133, 0.18),
+    16px 27px 3px rgba(133, 133, 133, 0.17),
+    18px 30px 3px rgba(133, 133, 133, 0.16),
+    20px 33px 3px rgba(133, 133, 133, 0.15),
+    22px 36px 3px rgba(133, 133, 133, 0.14),
+    24px 39px 3px rgba(133, 133, 133, 0.13),
+    26px 42px 3px rgba(133, 133, 133, 0.12),
+    28px 45px 3px rgba(133, 133, 133, 0.11),
+    30px 48px 3px rgba(133, 133, 133, 0.1),
+    32px 51px 3px rgba(133, 133, 133, 0.09),
+    34px 54px 3px rgba(133, 133, 133, 0.08),
+    36px 57px 3px rgba(133, 133, 133, 0.06),
+    38px 60px 3px rgba(133, 133, 133, 0.05),
+    40px 63px 3px rgba(133, 133, 133, 0.04),
+    42px 66px 3px rgba(133, 133, 133, 0.03),
+    44px 69px 3px rgba(133, 133, 133, 0.02),
+    46px 72px 3px rgba(133, 133, 133, 0.01);
+}
+
+.tween-looper
+{
+  -webkit-backface-visibility: hidden;
+
+  backface-visibility: hidden;
+
+  -webkit-animation: looperFrames 6s linear infinite;
+
+  animation: looperFrames 6s linear infinite;
+}
+@-webkit-keyframes looperFrames
+{
+  0%{-webkit-transform: translateY(0px);}
+  25%{-webkit-transform: translateY(18px);}
+  50%{-webkit-transform: translateY(0px);}
+  75%{-webkit-transform: translateY(-18px);}
+  100%{-webkit-transform: translateY(0px);}
+}
+
+@keyframes looperFrames
+{
+  0%{transform: translateY(0px);}
+  25%{transform: translateY(18px);}
+  50%{transform: translateY(0px);}
+  75%{transform: translateY(-18px);}
+  100%{transform: translateY(0px);}
 }
