@@ -1,0 +1,71 @@
+@charset "utf-8";
+/*CSS document for cats website, */
+/*Developed by Larisa Sabalin*/
+/*Script date: January 7, 2018*/
+
+video {
+    margin: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+ background: url('../images/_DSC3617.jpg') no-repeat;
+  background-size: cover;
+  -webkit-transition: 1s opacity;
+  transition: 1s opacity;
+}
+.stopfade {
+   opacity: .5;
+}
+
+#shanya {
+  letter-spacing: 0.8px;
+  font-weight:100;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  padding: 2rem;
+  width: 30%;
+  min-height: 60%;
+  height: 90%;
+  margin-top:50px;
+  margin-right: 20px;
+  float: right;
+  font-size: 1.8rem;
+}
+/*h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  letter-spacing: .3rem;
+}*/
+#shanya button {
+  display: block;
+  width: 80%;
+  padding: .4rem;
+  border: none;
+  margin: 1rem auto;
+  background: rgba(255,255,255,0.23);
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: .3s background;
+  transition: .3s background;
+}
+#shanya button:hover {
+   background: rgba(255, 255, 0, 2.0);
+   color: rgba(0,0,0,0.5);
+}
+
+@media (max-width: 700px) {
+  #shanya{width:70%;}
+}
+@media (max-device-width: 800px) {
+  html { background: url(../images/_DSC3617.jpg) #000 no-repeat center center fixed; }
+  #bgvid { display: none; }
+}
