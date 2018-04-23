@@ -1,0 +1,59 @@
+@charset "utf-8";
+/*CSS document for cats website, */
+/*Developed by Larisa Sabalin*/
+/*Script date: January 7, 2018*/
+
+.formBack{
+margin-left: 50%;
+width: 40%;
+min-width: 400px;
+
+/*border-color: rgb(255,182,121);
+border-style: ridge;*/
+
+}
+
+.formFrame{
+  float: right;
+  display: inline-block;
+  margin-top:30px;
+  margin-left: 15px;
+  margin-bottom: 40px;
+  margin-right:20px;
+  padding: 5px;
+  width: 75%;
+}
+
+.formLabel{
+  padding-left:5px;
+  padding-top: 10px;
+  margin-top: 5px;
+  width: 100%;
+}
+form>label{
+  min-width: 33%;
+  width: 100%;
+}
+#contact_info{
+  display: none;
+}
+#contact button{
+  display: block;
+  width: 100%;
+  padding: .4rem;
+  border: none;
+  margin-bottom: 5px;
+  background: rgba(255,255,255,0.23);
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: .3s background;
+  transition: .3s background;
+}
+#contact button:hover {
+   background: rgba(255, 255, 0, 2.0);
+   color: rgba(0,0,0,0.5);
+}
+@media (max-width: 700px) {
+  .formFrame{width:70%;}
+}

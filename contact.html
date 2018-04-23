@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | Scottish fold & Scottish straight</title>
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
+
+  <link rel="stylesheet" href="../styles/catsBase.css" />
+  <link href="https://fonts.googleapis.com/css?family=Bevan|Cabin+Sketch|Fugaz+One|Indie+Flower|Nova+Mono|Righteous|Sacramento|Shadows+Into+Light+Two|Yatra+One" rel="stylesheet">
+  <script src="../bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <div class="background">
+    <img src="../images/_DSC3491.jpg" class="stretch" alt="" />
+  </div>
+<nav id="nav" class="nav">
+  <div class="navIndent">
+                    <a class="navFont" href="index.html">Home</a>
+                    <a class="navFont" href="about.html">About</a>
+                    <a class="navFont" href="cats.html">Cats</a>
+                    <a class="navFont" href="order.html">Order</a>
+                    <a class="navFont active" href="contact.html">Contact</a>
+  </div>
+  <div class="styled-select red semi-square">
+  <select onchange="location = this.value;">
+      <option value="" selected="selected">Select</option>
+
+      <option value="index.html">Home</option>
+      <option value="about.html">About</option>
+      <option value="cats.html">Cats</option>
+      <option value="order.html">Order</option>
+      <option value="contact.html">Contact</option>
+    </select>
+  </div>
+<!--
+    <div class="lang">
+      <a class="genLang" href="fr.html">FR</a>
+      <a class="genLang" href="ru.html">RU</a>
+
+  </div>-->
+             <!--<ul class="nav navbar-nav navbar-center main_menus">
+                  <li class="active"><a class="navFont" href="index.html">Accueil</a></li>
+                  <li><a class="navFont" href="about.html">À propos</a></li>
+                  <li><a class="navFont" href="adultCat.html">Les parents</a></li>
+                  <li><a class="navFont" href="kittens.html">Nos chatons</a></li>
+                  <li><a class="navFont" href="order.html">Commander</a></li>
+                  <li><a class="navFont" href="contact.html">Contactez-nous</a></li>
+              </ul>-->
+
+  </nav>
+  <div class="backMain">
+  </div>
+
+        <div class="formFrame">
+        <h1 class="title">Contact us for any questions</h1>
+
+        <form name="order" id="contact"
+                method="post" action="#order_info" autocomplete="on">
+                <label class="formLabel" for="your_name">Name*</label>
+                <input type="text" id="your_name" name="your_name" class="formLabel" maxlength="80" required="required" autofocus="autofocus" /></br>
+                <label class="formLabel" for="email">E-mail*</label>
+                <input type="email" id="email" name="email" class="formLabel" required="required" placeholder=" id@domain.com" /><br />
+
+                <label  class="formLabel" for="address">Address</label>
+                <input type="text" id="address" name="address" class="formLabel" required="required" /></br>
+                <label class="formLabel" for="ph_number">Phone number</label>
+                <input type="text" id="ph_number" name="ph_number" required="required"  class="formLabel"/></br>
+                <label class="formLabel" for="your_text">Your message</label>
+                <textarea id="your_text" name="your_text" class="formLabel" rows="5" cols="100%" required="required"></textarea></br>
+                <small class="emailHelp" class="">We'll never share your personal information with anyone else.</small><br />
+                <small class="emailHelp" class="">* requiered fields</small><br />
+                <button id="submit_form" name="submit_form" class="btn btn-default btn-sm" type="button" onclick="validateForm();">Send</button>
+                <button id="clear_form" name="clear_form" class="btn btn-default btn-sm" type="button" onclick="resetForm();">Reset</button>
+              </form>
+
+
+      <div id="contact_info">
+          <table class="contact_info_t  lang-en">
+              <tr>
+                  <td id="name_l" class="name_l">Name</td>
+                  <td id="name_v" class="name_v"></td>
+              </tr>
+              <tr>
+                  <td id="email_l" class="email_l">E-mail</td>
+                  <td id="email_v" class="email_v"></td>
+              </tr>
+              <tr>
+                  <td id="address_1" class="address_1">Address</td>
+                  <td id="address_v" class="address_v"></td>
+              </tr>
+              <tr>
+                  <td id="phone_l" class="phone_l">Phone Number</td>
+                  <td id="phone_v" class="phone_v"></td>
+              </tr>
+              <tr>
+                  <td id="message_l" class="message_l">Message</td>
+                  <td id="message_v" class="message_v"></td>
+              </tr>
+          </table>
+
+
+    </div>
+
+    <small class="signature">Designed, developed, filmed and photographed by Loritta</small>
+    </div>
+    <div class="navUnder">
+      We are located in Canada, Montreal. We may ship your kitten to your door in other provinces and contries.
+      </div>
+  </body>
+  </html>

@@ -1,0 +1,31 @@
+@charset "utf-8";
+/*CSS document for cats website, */
+/*Developed by Larisa Sabalin*/
+/*Script date: January 7, 2018*/
+
+/*general*/
+@import url("general.css");
+
+/* for nav and bottom */
+@import url("nav_base.css");
+/*@import url("nav_desktop.css") only screen and (min-width:992px);
+@import url("nav_tablet.css") only screen and (min-width:768px) and (max-width:991px);
+@import url("nav_mobile_landscape.css") only screen and (min-width:576px) and (max-width:767px);
+@import url("nav_mobile.css") only screen and (max-width:575px);*/
+
+/*for main parts of the page*/
+
+/*@import url("main_base.css");
+
+@import url("main_tablet.css") only screen and (min-width:768px) and (max-width:991px);
+
+@import url("main_mobile.css") only screen and (max-width:767px);*/
+
+/*for contact*/
+@import url("contact.css");
+
+/*for about*/
+@import url("about.css");
+
+/*for the video*/
+@import url("videoScreen.css");

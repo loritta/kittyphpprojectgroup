@@ -1,0 +1,164 @@
+@charset "utf-8";
+/*CSS document for cats website, */
+/*Developed by Larisa Sabalin*/
+/*Script date: January 7, 2018*/
+body {
+  margin: 0;
+  background: #fff;
+  font-family: 'Rokkitt', serif;
+}
+/*a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  background:rgba(0,0,0,0.5);
+  padding: .5rem;
+  -webkit-transition: .6s background;
+  transition: .6s background;
+}
+a:hover{
+  background:rgba(0,0,0,0.9);
+}*/
+.title{
+  color: #f54555;
+}
+.title:hover{
+  color: rgba(255, 255, 0, 2.0);
+}
+.center{
+  text-align: center;
+}
+h1{
+  color: #fff;
+  font-family: 'Righteous', cursive;
+}
+h2{
+color: #f1f1f1;
+  font-family: 'Righteous', cursive;
+  font-size: 18px;
+}
+p, label{
+  color: #fff;
+  font-family: 'Rokkitt', serif;
+  font-size: 14px;
+  font-weight: bolder;
+  letter-spacing: 1.2px;
+
+}
+/*main{
+  padding: 0;
+  margin: 0;
+}*/
+/*.mainBack{
+  background-color: rgba(255,182,121,0.2);
+  position: absolute;
+  background-size:cover;
+  background: url("../images/_DSC3708.jpg") no-repeat;
+  background-size:100%;
+  margin: 0;
+  padding: 0;
+}*/
+
+.background {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+z-index: -100;
+}
+.background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+  }
+.emailHelp{
+  margin-left: 10px;
+  min-width: 90%;
+  color: white;
+  padding-bottom: 5px;
+}
+.main {
+  z-index: -50;
+  letter-spacing: 0.8px;
+  font-weight:100;
+  padding: 2rem;
+  width: 98%;
+  height: 95%;
+  margin-top:50px;
+  margin-left: 10px;
+  margin-right: 30px;
+  padding-bottom: 100px;
+  float: left;
+  font-size: 1.8rem;
+}
+.backMain{
+  position: fixed;
+  background: rgba(0,0,0,0.5);
+  width: 100%;
+  height: 98%;
+  z-index: -50;
+}
+button, #contact button{
+  font-family: 'Righteous', cursive;
+  font-size: 20px;
+  font-weight: bolder;
+  letter-spacing: 1.2px;
+  font-stretch: expanded;
+  text-transform: capitalize;
+}
+.signature{
+  bottom: 45px;
+  color: white;
+}
+
+.signature:hover{
+color: rgba(255, 255, 0, 2.0);
+}
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+
+/*
+font-family: 'Rokkitt', serif;
+font-family: 'Yatra One', cursive;
+font-family: 'Nova Mono', monospace;
+font-family: 'Indie Flower', cursive;
+font-family: 'Sacramento', cursive;
+font-family: 'Shadows Into Light Two', cursive;
+font-family: 'Righteous', cursive;
+font-family: 'Fugaz One', cursive;
+font-family: 'Bevan', cursive;
+font-family: 'Cabin Sketch', cursive;
+
+Color	Hex	RGB
+blue dark
+#335577	(51,85,119)
+#bb7799	(187,119,153)
+#eeaabb	(238,170,187)
+pink
+#ccbbbb	(204,187,187)
+blue pale
+#558899	(85,136,153)
+yellow bright
+#fdea7b	(253,234,123)
+peach
+#ffb679	(255,182,121)
+grey
+#515151	(81,81,81)
+greyer
+#383838	(56,56,56)
+almost black
+#111111	(17,17,17)*/
+
+}

@@ -1,0 +1,34 @@
+@charset "utf-8";
+/*CSS document for cats website, */
+/*Developed by Larisa Sabalin*/
+/*Script date: January 7, 2018*/
+
+.about1{
+  display: inline-block;
+  margin-left: 1%;
+  height: auto;
+  width: 17%;
+  padding:20px;
+  min-width: 40px;
+  /*border-color: rgb(255,182,121);
+  border-style: ridge;*/
+
+  float: left;
+}
+.about3{
+  display: block;
+  margin-left: 20%;
+  height: auto;
+  width: 80%;
+
+  padding:20px;
+  /*border-color: rgb(255,182,121);
+  border-style: ridge;*/
+}
+
+/*.text{
+  margin: 10px;
+  padding-left: 20px;
+  font-family: 'Rokkitt', serif;
+  font-size: 16px;
+}*/
