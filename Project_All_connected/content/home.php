@@ -103,6 +103,3 @@
             <h1>Anything you wish to put here.</h1>
             <small class="signature">Designed, developed, filmed and photographed by Loritta</small>
         </section>
- 
-    
-

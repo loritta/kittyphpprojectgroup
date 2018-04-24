@@ -27,9 +27,9 @@ require_once 'includes/function.php';
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Cats | Scottish fold & Scottish straight</title>
 
-        <link rel="stylesheet" href="cats.css" />
-        <link rel="stylesheet" href="nav_base.css" />
-        <link rel="stylesheet" href="videoScreen.css" />
+        <link rel="stylesheet" href="styles/cats.css" />
+        <link rel="stylesheet" href="styles/nav_base.css" />
+        <link rel="stylesheet" href="styles/videoScreen.css" />
         <link href="https://fonts.googleapis.com/css?family=Bevan|Cabin+Sketch|Fugaz+One|Indie+Flower|Nova+Mono|Righteous|Sacramento|Shadows+Into+Light+Two|Yatra+One" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
@@ -61,7 +61,7 @@ require_once 'includes/function.php';
                     </div>
                 </div>
                 <span class='pawIcon' style="font-size:30px;cursor:pointer" onclick="openNav()">
-              <img src="paw_white.png" alt="Avatar" class="avatar">
+              <img src="images/paw_white.png" alt="Avatar" class="avatar">
           </span>
                 <a href="#menu" class="box-shadow-menu">
                     Menu
