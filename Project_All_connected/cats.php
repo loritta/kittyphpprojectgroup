@@ -31,7 +31,9 @@ require_once 'includes/function.php';
         <link rel="stylesheet" href="styles/nav_base.css" />
         <link rel="stylesheet" href="styles/videoScreen.css" />
         <link href="https://fonts.googleapis.com/css?family=Bevan|Cabin+Sketch|Fugaz+One|Indie+Flower|Nova+Mono|Righteous|Sacramento|Shadows+Into+Light+Two|Yatra+One" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          <link rel="STYLESHEET" type="text/css" href="styles/pwdwidget.css" />
+		<script src="scripts/pwdwidget.js" type="text/javascript"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
         <header>
