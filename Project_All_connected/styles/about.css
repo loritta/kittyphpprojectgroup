@@ -1,0 +1,94 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24-Apr-2018, 3:42:27 PM
+    Author     : larisasabalin
+*/
+.aboutHr{
+    color: #dc143c;
+    background-color: #dc143c;
+    margin:100px;
+}
+.aboutMain{
+    height: 120vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.aboutPhoto {
+    -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+    height: 120vh;
+  text-transform: uppercase;
+  font-size: 3vw;
+  background-image: url(../images/_DSC3993.jpg);
+color: #fff;
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+
+
+
+.aboutEven{
+    background: rgb(244, 255, 219);
+    margin: 0;
+    padding: 0;
+    
+}
+.aboutOdd{
+    background: #fff;
+    margin: 0;
+    padding: 0; 
+    
+}
+.aboutOdd p, .aboutEven p{
+     margin:20px;
+    padding: 10px;
+}
+
+.aboutValues h1{
+    text-align: center;
+}
+.reference{
+    font-size: 10px;
+    text-transform: uppercase;
+}
+aboutList{
+    text-align: center;
+}

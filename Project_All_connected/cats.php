@@ -30,6 +30,7 @@ require_once 'includes/function.php';
         <link rel="stylesheet" href="styles/cats.css" />
         <link rel="stylesheet" href="styles/nav_base.css" />
         <link rel="stylesheet" href="styles/videoScreen.css" />
+        <link rel="stylesheet" href="styles/about.css" />
         <link href="https://fonts.googleapis.com/css?family=Bevan|Cabin+Sketch|Fugaz+One|Indie+Flower|Nova+Mono|Righteous|Sacramento|Shadows+Into+Light+Two|Yatra+One" rel="stylesheet">
           <link rel="STYLESHEET" type="text/css" href="styles/pwdwidget.css" />
 		<script src="scripts/pwdwidget.js" type="text/javascript"></script>
