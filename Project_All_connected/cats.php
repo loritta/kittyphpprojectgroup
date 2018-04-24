@@ -48,14 +48,14 @@ require_once 'includes/function.php';
                         <div class="left">
                             <a class="navFont active"  href="cats.php">Home</a>
                             <a class="navFont"  href="cats.php?content=about">About</a>
-                            <a class="navFont"  href="index.html">Breeds</a>
+                            <a class="navFont"  href="cats.php?content=breeds">Breeds</a>
                             <a class="navFont"  href="cats.php?content=adopted">Adopted</a>
-                            <a class="navFont"  href="index.html">Gallery</a>
+                            <a class="navFont"  href="cats.php?content=gallery">Gallery</a>
                         </div>
                         <div class="right">
                             <a class="navFont" href="cats.php?content=resources">Useful Resources</a>
                             <a class="navFont" href="cats.php?content=contact">Contact</a>
-                            <a class="navFont" href="order.html">Order</a>
+                            <a class="navFont" href="cats.php?content=order">Order</a>
                             <a class="navFont" href="cats.php?content=login">Login</a>
 
 
