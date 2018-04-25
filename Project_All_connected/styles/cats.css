@@ -2,6 +2,7 @@ body{
   margin: 0;
   padding: 0;
   color:black;
+  background: rgb(244, 255, 219);
 }
 
 header, div{
@@ -95,10 +96,19 @@ section:nth-of-type(6) {
 .insideWhite h2, .notMoving h2{
   text-align: left;
   padding-right: 10px;
-  font-weight:50;
+  font-weight:50px;
   text-shadow: 0 0 5px rgba(0,0,0,0.4);
   font-size: 1.3rem;
   font-weight: bold;
+  margin-top: 2px;
+  width: 120px;
+}
+.notMoving label{
+  text-align: left;
+  padding-right: 10px;
+  font-weight:normal;
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+  font-size: 18px;
   margin-top: 2px;
   width: 120px;
 }
@@ -243,7 +253,7 @@ section:nth-of-type(6) {
 
 .center{
       position: relative;
-      width:auto;
+      width:50%;
       right:15%;
       left:5%;
 

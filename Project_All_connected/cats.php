@@ -51,9 +51,10 @@ require_once 'includes/function.php';
                             <a class="navFont"  href="cats.php?content=about">About</a>
                             <a class="navFont"  href="cats.php?content=breeds">Breeds</a>
                             <a class="navFont"  href="cats.php?content=adopted">Adopted</a>
-                            <a class="navFont"  href="cats.php?content=gallery">Gallery</a>
+                            
                         </div>
                         <div class="right">
+                            <a class="navFont"  href="cats.php?content=gallery">For adoption</a>
                             <a class="navFont" href="cats.php?content=resources">Useful Resources</a>
                             <a class="navFont" href="cats.php?content=contact">Contact</a>
                             

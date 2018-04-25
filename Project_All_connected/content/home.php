@@ -87,10 +87,11 @@
         </section>
 
         <section>
-            <div class="insideWhite">
-                <h1>Time spent with cats is never wasted. </br>~Sigmund Freud
+            <div class="insideWhite textCenter">
+                <h1>Time spent with cats is never wasted. </br><span class="reference">~ Sigmund Freud ~</span>
                 </h1>
-                <h1> Cats are intended to teach us that not everything in nature has a function. </br>~Garrison Keillor</h1>
+                <h1> Cats are intended to teach us that not everything in nature has a function. </br>
+                    <span class="reference">~ Garrison Keillor ~</span></h1>
                 <h1></h1>
             </div>
         </section>

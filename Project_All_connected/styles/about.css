@@ -75,17 +75,11 @@ color: #fff;
      margin:20px;
     padding: 10px;
 }
-
-.aboutValues h1{
-    text-align: center;
-}
 .reference{
     font-size: 10px;
     text-transform: uppercase;
 }
-.aboutList{
-    text-align: center;
-}
+
 .aboutText h1{
     text-transform: uppercase;
   letter-spacing: 0.8px;

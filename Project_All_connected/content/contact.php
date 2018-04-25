@@ -10,14 +10,18 @@
 
 
 ?>
-  <div class="backMain">
-  </div>
+ <link rel="stylesheet" href="styles/contact.css" />
+  <div class="aboutMain abboutEven">
+  
 
-        <div class="formFrame">
-        <h1 class="title">Contact us for any questions</h1>
-
+        <div class="formFrame notMoving">
+           
+        <h1 class="title">Contact us</h1>
+        <p>If you would like more information or want to book a demo, please provide us with your details below</p>
+<small class="emailHelp" class="">* required fields</small><br />
         <form name="order" id="contact"
                 method="post" action="#order_info" autocomplete="on">
+            <div class="box">
                 <label class="formLabel" for="your_name">Name*</label>
                 <input type="text" id="your_name" name="your_name" class="formLabel" maxlength="80" required="required" autofocus="autofocus" /></br>
                 <label class="formLabel" for="email">E-mail*</label>
@@ -26,16 +30,22 @@
                 <label  class="formLabel" for="address">Address</label>
                 <input type="text" id="address" name="address" class="formLabel" required="required" /></br>
                 <label class="formLabel" for="ph_number">Phone number</label>
+                
                 <input type="text" id="ph_number" name="ph_number" required="required"  class="formLabel"/></br>
+                </div>
+            <div class="box">
                 <label class="formLabel" for="your_text">Your message</label>
-                <textarea id="your_text" name="your_text" class="formLabel" rows="5" cols="100%" required="required"></textarea></br>
+                <textarea id="your_text" name="your_text" class="formLabel" rows="5" cols="" required="required"></textarea></br>
                 <small class="emailHelp" class="">We'll never share your personal information with anyone else.</small><br />
-                <small class="emailHelp" class="">* requiered fields</small><br />
+                
+            </div>
                 <button id="submit_form" name="submit_form" class="btn btn-default btn-sm" type="button" onclick="validateForm();">Send</button>
                 <button id="clear_form" name="clear_form" class="btn btn-default btn-sm" type="button" onclick="resetForm();">Reset</button>
               </form>
 
-
+        </div>
+      </div>
+<!--
       <div id="contact_info">
           <table class="contact_info_t  lang-en">
               <tr>
@@ -61,6 +71,6 @@
           </table>
 
 
-    </div>
+    </div>-->
 
     
