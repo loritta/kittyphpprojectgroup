@@ -11,7 +11,7 @@
 
 ?>
  <link rel="stylesheet" href="styles/contact.css" />
-  <div class="aboutMain abboutEven">
+  <div class="aboutMain aboutEven">
   
 
         <div class="formFrame notMoving">
@@ -21,7 +21,7 @@
 <small class="emailHelp" class="">* required fields</small><br />
         <form name="order" id="contact"
                 method="post" action="#order_info" autocomplete="on">
-            <div class="box">
+                <div class="box">
                 <label class="formLabel" for="your_name">Name*</label>
                 <input type="text" id="your_name" name="your_name" class="formLabel" maxlength="80" required="required" autofocus="autofocus" /></br>
                 <label class="formLabel" for="email">E-mail*</label>
@@ -39,8 +39,8 @@
                 <small class="emailHelp" class="">We'll never share your personal information with anyone else.</small><br />
                 
             </div>
-                <button id="submit_form" name="submit_form" class="btn btn-default btn-sm" type="button" onclick="validateForm();">Send</button>
-                <button id="clear_form" name="clear_form" class="btn btn-default btn-sm" type="button" onclick="resetForm();">Reset</button>
+                <button id="submit_form" name="submit_form" class="btnContact" type="button" onclick="validateForm();">Send</button>
+                <button id="clear_form" name="clear_form" class="btnContact" type="button" onclick="resetForm();">Reset</button>
               </form>
 
         </div>
