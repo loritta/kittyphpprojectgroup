@@ -6,6 +6,11 @@
  */
 ?>
 <style>
+    #container{
+        background-color: #fff;
+        border-right: 5%;
+        
+    }
     .thumbnail > img,
     .thumbnail a > img,
     .carousel-inner > .item > img,
@@ -36,7 +41,7 @@
 
     .tz-gallery .thumbnail {
         padding: 0;
-        background-color: rgb(244, 255, 219);;
+        background-color: #bfafa6;
         border-radius: 4px;
         border: none;
         transition: 0.15s ease-in-out;
@@ -65,18 +70,20 @@
     .tz-gallery .caption {
         padding: 5px 0px 5px 0px;
         text-align: center;
-        background: rgb(244, 255, 219);
+        background: #bfafa6;
+        color: #fff;
     }
 
     .tz-gallery .caption h3 {
         font-size: 14px;
         font-weight: bold;
         margin-top: 0;
+        color: #fff;
     }
 
     .tz-gallery .caption p {
         font-size: 12px;
-        color: #7b7d7d;
+        color: #fff;
         margin: 0;
     }
 

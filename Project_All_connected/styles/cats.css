@@ -2,7 +2,7 @@ body{
   margin: 0;
   padding: 0;
   color:black;
-  background: rgb(244, 255, 219);
+  background: #bfafa6;
 }
 
 header, div{
@@ -147,7 +147,7 @@ section:nth-of-type(6) {
   width: 80%;
   margin: 0.25em auto 0 auto;
 
-  color: rgb(244, 255, 219);
+  color: #d4d2d5;
   outline: none;
 
   font-size: 3em;

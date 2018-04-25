@@ -66,6 +66,7 @@
     </div></div>
         <div class="aboutMain aboutOdd ">
     <div class="aboutValues notMoving">
+        <br>
         <H1>Our values</H1>
         <ol class="aboutList">
             <br>Our cats are our companions.
