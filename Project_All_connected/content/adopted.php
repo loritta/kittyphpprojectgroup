@@ -5,108 +5,7 @@
  * and open the template in the editor.
  */
 ?>
-<style>
-    #container{
-        background-color: #fff;
-        border-right: 5%;
-        
-    }
-    .thumbnail > img,
-    .thumbnail a > img,
-    .carousel-inner > .item > img,
-    .carousel-inner > .item > a > img {
-        display: block;
-        max-width: 100%;
-        height: auto;
 
-    }
-
-    .gallery-container h1 {
-        text-align: center;
-        margin-top: 70px;
-        font-weight: bold;
-        color: #58595a;
-    }
-
-    .gallery-container p.page-description {
-        text-align: center;
-        margin: 30px auto;
-        font-size: 18px;
-        color: #85878c;
-    }
-
-    .tz-gallery {
-        padding: 40px;
-        margin-top: 5%;
-    }
-
-    .tz-gallery .thumbnail {
-        padding: 0;
-        background-color: #bfafa6;
-        border-radius: 4px;
-        border: none;
-        transition: 0.15s ease-in-out;
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
-        transition: transform 0.4s ease;
-        width: auto;
-    }
-
-    .tz-gallery .thumbnail:hover {
-        transform: translateY(-10px) scale(1.02);
-    }
-
-    .tz-gallery .lightbox img {
-        border-radius: 4px 4px 0 0;
-        height: 250px;
-        min-width: 250px;
-        width: 100%;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-    }
-
-    .tz-gallery .caption {
-        padding: 5px 0px 5px 0px;
-        text-align: center;
-        background: #bfafa6;
-        color: #fff;
-    }
-
-    .tz-gallery .caption h3 {
-        font-size: 14px;
-        font-weight: bold;
-        margin-top: 0;
-        color: #fff;
-    }
-
-    .tz-gallery .caption p {
-        font-size: 12px;
-        color: #fff;
-        margin: 0;
-    }
-
-    .adoptedSpace{
-        margin-bottom: 10px;
-    }
-
-    .aboutEven {
-        margin-top: 2%;
-        padding: 4%;
-    }
-
-    .modal {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        z-index: 10040;
-        overflow: auto;
-        overflow-y: auto;       
-    }
-
-</style>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -150,8 +49,9 @@
                         <img src="images/_DSC3492.jpg" alt="Second image">
                     </a>
                     <div class="caption">
-                        <h3>"Busya"</h3>
-                        <p></p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#busyaModalCenter">
+                            "Busya"
+                        </button>
                     </div>
                 </div>
             </div>
@@ -261,8 +161,8 @@
 
 
     <!-- Modals -->
-    
-    !-- "The Bear" Modal -->
+
+    <!-- "The Bear" Modal -->
     <div class="modal fade" id="theBearModalCenter" tabindex="-1" role="dialog" aria-labelledby="theBearModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -289,6 +189,33 @@
             </div>
         </div>
     </div>
+    <!-- "Busya" Modal -->
+    <div class="modal fade" id="busyaModalCenter" tabindex="-1" role="dialog" aria-labelledby="busyaModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="busyaodalLongTitle">Busya</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h6>Breed: Gray cat?</h6><br />
+                    <h6>Age: 0.1 years</h6><br />
+                    <h6>Gender: Female</h6><br />
+                    <h6>Vaccinated: No</h6><br />
+                    <h6>De-Clawed: No</h6><br />
+                    <h6>About Busya</h6>
+                    <p>She's a cat and she's already adopted, donate now thank you.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
 </div>
 
 
