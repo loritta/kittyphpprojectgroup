@@ -13,6 +13,7 @@
         display: block;
         max-width: 100%;
         height: auto;
+        
     }
 
     .gallery-container h1 {
@@ -35,12 +36,13 @@
 
     .tz-gallery .thumbnail {
         padding: 0;
-        background-color: #fff;
+        background-color: rgb(244, 255, 219);;
         border-radius: 4px;
         border: none;
         transition: 0.15s ease-in-out;
         box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
         transition: transform 0.4s ease;
+        width: auto;
     }
 
     .tz-gallery .thumbnail:hover {
@@ -52,11 +54,18 @@
         height: 250px;
         min-width: 250px;
         width: auto;
+        -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
     }
 
     .tz-gallery .caption {
         padding: 5px 0px 5px 0px;
         text-align: center;
+        background: rgb(244, 255, 219);
     }
 
     .tz-gallery .caption h3 {
@@ -108,27 +117,31 @@
         border: 1px solid black;
     }
     */
+    .adoptedSpace{
+    margin-bottom: 10px;
+}
 </style>
 
 <link rel="stylesheet" type="text/css" href="styles/adopted.css"/>
 
-<header class="pageBanner">
-    <h1>Our cats with new homes</h1>
-</header>
+<div class=" aboutEven aboutMain notMoving">
+    <h1 class="textCenter">Our cats with new homes</h1>
+</div>
 
 
 <div id="container" class="container gallery-container">
     <div class="tz-gallery">
-        <div class="row row-eq-height">
+        <!--first row-->
+        <div class="row row-eq-height adoptedSpace">
 
             <div class="col-sm-6 col-md-4">
 
                 <div class='thumbnail'>
-                    <a href="media/AdoptedCats/_DSC3450.jpg" data-caption="Image caption" caption='test' class='lightbox'>
-                        <img src="media/AdoptedCats/_DSC3450.jpg" alt="First image">
+                    <a href="images/_DSC3450.jpg" data-caption="Image caption" caption='test' class='lightbox'>
+                        <img src="images/_DSC3450.jpg" alt="First image">
                     </a>
                     <div class="caption">
-                        <h3>Kitty 1</h3>
+                        <h3>"The bear"</h3>
                         <!-- <button type="button" class="btn btn-primary">More Info</button> -->
 
                     </div>
@@ -137,11 +150,11 @@
 
             <div class="col-sm-6 col-md-4">
                 <div class='thumbnail'>
-                    <a href="media/AdoptedCats/_DSC3492.jpg" class='lightbox'>
-                        <img src="media/AdoptedCats/_DSC3492.jpg" alt="Second image">
+                    <a href="images/_DSC3492.jpg" class='lightbox'>
+                        <img src="images/_DSC3492.jpg" alt="Second image">
                     </a>
                     <div class="caption">
-                        <h3>Kitty 2</h3>
+                        <h3>"Busya"</h3>
                         <p></p>
                     </div>
                 </div>
@@ -149,18 +162,18 @@
 
             <div class="col-sm-6 col-md-4">
                 <div class='thumbnail'>
-                    <a href="media/AdoptedCats/_DSC3494.jpg" class='lightbox'>
-                        <img src="media/AdoptedCats/_DSC3494.jpg" alt="Third image">
+                    <a href="images/_DSC3494.jpg" class='lightbox'>
+                        <img src="images/_DSC3494.jpg" alt="Third image">
                     </a>
                     <div class="caption">
-                        <h3>Kitty 3</h3>
+                        <h3>"Busya"</h3>
                         <p></p>
                     </div>
                 </div>
             </div>
-
-            <!--
-            <div class="col-sm-6 col-md-4" class='lightbox'>
+        </div>
+          
+            <!--<div class="col-sm-6 col-md-4" class='lightbox'>
                 <div class='thumbnail'>
                     <a href="_DSC3455.jpg" data-caption="Image caption" caption='test'>
                         <img src="_DSC3455.jpg" alt="First image">
@@ -168,14 +181,105 @@
                     <div class="caption">
                         <h3>Kitty 4</h3>
                         <p></p>
+                    </div>-->
+                </div>
+            
+            
+        
+         <!--end first row-->
+      
+          <!--second row-->
+          <div class="tz-gallery">
+       <div class="row row-eq-height adoptedSpace">
+
+            <div class="col-sm-6 col-md-4">
+
+                <div class='thumbnail'>
+                    <a href="images/_DSC3965.jpg" data-caption="Image caption" caption='test' class='lightbox'>
+                        <img src="images/_DSC3965.jpg" alt="First image">
+                    </a>
+                    <div class="caption">
+                        <h3>"The bear 2"</h3>
+                        <!-- <button type="button" class="btn btn-primary">More Info</button> -->
+
+                </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class='thumbnail'>
+                    <a href="images/_DSC3457.jpg" class='lightbox'>
+                        <img src="images/_DSC3457.jpg" alt="Second image">
+                    </a>
+                    <div class="caption">
+                        <h3>"Shanya & The bear"</h3>
+                        <p></p>
                     </div>
                 </div>
             </div>
-            -->
+
+            <div class="col-sm-6 col-md-4">
+                <div class='thumbnail'>
+                    <a href="images/_DSC4005.jpg" class='lightbox'>
+                        <img src="images/_DSC4005.jpg" alt="Third image">
+                    </a>
+                    <div class="caption">
+                        <h3>"Greycy"</h3>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
         </div>
+          </div>
+           <!--end second row-->
+           
+            <!--third row-->
+            <div class="tz-gallery">
+    <div class="row row-eq-height adoptedSpace">
+
+            <div class="col-sm-6 col-md-4">
+
+                <div class='thumbnail'>
+                    <a href="images/_DSC3952.jpg" data-caption="Image caption" caption='test' class='lightbox'>
+                        <img src="images/_DSC3952.jpg" alt="First image">
+                    </a>
+                    <div class="caption">
+                        <h3>"Boubou"</h3>
+                        <!-- <button type="button" class="btn btn-primary">More Info</button> -->
+
+                   </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class='thumbnail'>
+                    <a href="images/_DSC3951.jpg" class='lightbox'>
+                        <img src="images/_DSC3951.jpg" alt="Second image">
+                    </a>
+                    <div class="caption">
+                        <h3>"Boubou"</h3>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class='thumbnail'>
+                    <a href="images/_DSC3452.jpg" class='lightbox'>
+                        <img src="images/_DSC3452.jpg" alt="Third image">
+                    </a>
+                    <div class="caption">
+                        <h3>"The bear"</h3>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+             <!--end third row-->
 
     </div>
-</div>
+
 
 <script>
     baguetteBox.run('.tz-gallery', {
