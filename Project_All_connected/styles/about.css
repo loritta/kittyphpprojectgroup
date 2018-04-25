@@ -10,10 +10,10 @@ and open the template in the editor.
 .aboutHr{
     color: #dc143c;
     background-color: #dc143c;
-    margin:100px;
+    margin:70px;
 }
 .aboutMain{
-    height: 120vh;
+    height: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -webkit-box;
@@ -67,15 +67,9 @@ color: #fff;
 
 .aboutEven{
     background: rgb(244, 255, 219);
-    margin: 0;
-    padding: 0;
-    
 }
 .aboutOdd{
     background: #fff;
-    margin: 0;
-    padding: 0; 
-    
 }
 .aboutOdd p, .aboutEven p{
      margin:20px;
@@ -89,6 +83,25 @@ color: #fff;
     font-size: 10px;
     text-transform: uppercase;
 }
-aboutList{
+.aboutList{
     text-align: center;
+}
+.aboutText h1{
+    text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight:100;
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+  font-size: 1.9rem;
+  margin: 2%;
+  padding: 0;
+}
+.aboutText h2{
+    text-align: left;
+  padding-right: 10px;
+  font-weight:50;
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 2px;
+  width: 120px;
 }

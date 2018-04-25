@@ -11,8 +11,8 @@
 
 ?>
 
-<div class="aboutMain">
-    <div class="aboutEven notMoving">
+<div class="aboutMain aboutEven ">
+    <div class="aboutText">
         <br>
         <br>
     <h1>What is breeding? </h1>
@@ -20,24 +20,33 @@
         with desirable genetic traits, to maintain or enhance these 
         traits in future generations.
     </p>
-    <span class="reference"><a href="https://www.nature.com/"> ~ definition taken from Nature.com</a><span>
+    <span class="reference"><a href="https://www.nature.com/"> ~ definition taken from Nature.com ~</a><span>
         <br>
         <br>
     </div>
+</div>
+<div class="aboutMain aboutOdd">
+         <br>
         <br>
-        <br>
-    <div class="aboutOdd notMoving">
+    <div class="aboutText">
         <h1> Where are we growing these fluffy miracles?</h1>
         <p> We are located in Montreal a beautiful city of Quebec province in Canada. </p>
-    </div>
-       
-        <br>
         <hr class="aboutHr">
+        <div>
+          <svg class="arrows">
+        							<path class="a1" d="M0 0 L30 32 L60 0"></path>
+        							<path class="a2" d="M0 20 L30 52 L60 20"></path>
+        							<path class="a3" d="M0 40 L30 72 L60 40"></path>
+        						</svg>
+        </div>
+    </div>
+        
+        
    
 </div>
 <div class="aboutPhoto"></div>
-<div class="aboutMain">
-    <div class="aboutEven notMoving">
+<div class="aboutMain aboutEven ">
+    <div class="aboutText">
         <br>
         <br>
         <h1> How did it start? </h1>
@@ -54,10 +63,9 @@
         </p>
         <br>
         <br>
-    </div>
-        <br>
-        <br>
-    <div class="aboutOdd aboutValues notMoving">
+    </div></div>
+        <div class="aboutMain aboutOdd ">
+    <div class="aboutValues notMoving">
         <H1>Our values</H1>
         <ol class="aboutList">
             <br>Our cats are our companions.
@@ -70,4 +78,5 @@
         </ol>
         <hr class="aboutHr">
     </div>
+        </div>
 </div>

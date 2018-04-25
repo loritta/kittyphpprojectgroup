@@ -66,9 +66,9 @@ require_once 'includes/function.php';
                 <span class='pawIcon' style="font-size:30px;cursor:pointer" onclick="openNav()">
               <img src="images/paw_red.png" alt="Avatar" class="avatar">
           </span>
-                <a href="#menu" class="box-shadow-menu">
+               <!-- <a href="#menu" class="box-shadow-menu">
                     Menu
-                </a>
+                </a>-->
 
             </nav>
         </header>
