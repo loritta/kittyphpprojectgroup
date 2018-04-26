@@ -15,26 +15,27 @@
 
 
 
-<div class="aboutEven aboutMain notMoving">
-    <h1 class="textCenter">Our cats with new homes</h1>
-</div>
 
 
-<div id="container" class="container gallery-container">
-    <div class="tz-gallery">
+
+<div class="aboutEven notMoving">
+     <h1 class="textCenter">Our parents</h1>
+    <div id="" class="container gallery-container galleryMargin">
+    <div class="tz-gallery galleryMargin">
+       
         <!--first row-->
-        <div class="row row-eq-height adoptedSpace">
+        <div class="row row-eq-height adoptedSpace galleryMargin">
 
-            <div class="col-sm-6 col-md-4">
+            <div class="col-sm-6 col-md-6 galleryMargin">
 
-                <div class='thumbnail'>
-                    <a href="images/_DSC3450.jpg" data-caption="Image caption" class='lightbox'>
-                        <img src="images/_DSC3450.jpg" alt="First image">
+                <div class='thumbnail galleryMargin'>
+                    <a class="square" href="images/_DSC3974.jpg" data-caption="Image caption" class='lightbox'>
+                        <img src="images/_DSC3974.jpg" alt="Micy Photo">
 
                     </a>
                     <div class="caption">
                         <button type="button" class="btn btnAll" data-toggle="modal" data-target="#theBearModalCenter">
-                            "The Bear"
+                            "Busya"
                         </button>
                         <!-- <button type="button" class="btn btn-primary">More Info</button> -->
 
@@ -43,27 +44,74 @@
                 </div>
             </div>
 
-            <div class="col-sm-6 col-md-4">
+            <div class="col-sm-6 col-md-6">
                 <div class='thumbnail'>
-                    <a href="images/_DSC3492.jpg" class='lightbox'>
-                        <img src="images/_DSC3492.jpg" alt="Second image">
+                    <a class="square" href="images/_DSC3969.jpg" class='lightbox'>
+                        <img src="images/_DSC3969.jpg" alt="Second image">
                     </a>
                     <div class="caption">
                         <button type="button" class="btn btnAll" data-toggle="modal" data-target="#busyaModalCenter">
-                            "Busya"
+                            "Micy"
                         </button>
+                    </div>
+                </div>
+            </div>
+</div>
+        <div>
+          <svg class="arrows">
+        							<path class="a1" d="M0 0 L30 32 L60 0"></path>
+        							<path class="a2" d="M0 20 L30 52 L60 20"></path>
+        							<path class="a3" d="M0 40 L30 72 L60 40"></path>
+        						</svg>
+        </div>
+    </div>
+    </div>
+</div>
+        
+        <div class="aboutOdd galleryBatch">
+    <h1 class="textCenter">Our kittens</h1>
+    <h2 class="textCenter">First batch</h2>
+<div id="container" class="container gallery-container ">
+    <h1 class="textCenter">The bear</h1>
+    <div class="tz-gallery galleryMargin">
+        <!--first row-->
+        <div class="row row-eq-height adoptedSpace galleryMargin">
+
+            <div class="col-sm-6 col-md-4">
+
+                <div class='thumbnail'>
+                    <a href="images/_DSC3394.jpg" class='lightbox'>
+                        <img src="images/_DSC3394.jpg" alt="First image">
+
+                    </a>
+                    <div class="caption">
+                        <h3>"The bear"</h3>
+                        <!-- <button type="button" class="btn btn-primary">More Info</button> 
+                        data-caption="Image caption"-->
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class='thumbnail'>
+                    <a href="images/_DSC3442.jpg" class='lightbox'>
+                        <img src="images/_DSC3442.jpg" alt="Second image">
+                    </a>
+                    <div class="caption">
+                       <h3>"The bear"</h3>
                     </div>
                 </div>
             </div>
 
             <div class="col-sm-6 col-md-4">
                 <div class='thumbnail'>
-                    <a href="images/_DSC3494.jpg" class='lightbox'>
-                        <img src="images/_DSC3494.jpg" alt="Third image">
+                    <a href="images/_DSC3448.jpg" class='lightbox'>
+                        <img src="images/_DSC3448.jpg" alt="Third image">
                     </a>
                     <div class="caption">
-                        <h3>"Busya"</h3>
-                        <p></p>
+                        <h3>"The bear"</h3>
                     </div>
                 </div>
             </div>
@@ -76,76 +124,34 @@
             <div class="col-sm-6 col-md-4">
 
                 <div class='thumbnail'>
-                    <a href="images/_DSC3965.jpg" data-caption="Image caption" class='lightbox'>
-                        <img src="images/_DSC3965.jpg" alt="First image">
-                    </a>
-                    <div class="caption">
-                        <h3>"The bear 2"</h3>
-                        <!-- <button type="button" class="btn btn-primary">More Info</button> -->
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-                <div class='thumbnail'>
-                    <a href="images/_DSC3457.jpg" class='lightbox'>
-                        <img src="images/_DSC3457.jpg" alt="Second image">
-                    </a>
-                    <div class="caption">
-                        <h3>"Shanya & The bear"</h3>
-                        <p></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-                <div class='thumbnail'>
-                    <a href="images/_DSC4005.jpg" class='lightbox'>
-                        <img src="images/_DSC4005.jpg" alt="Third image">
-                    </a>
-                    <div class="caption">
-                        <h3>"Greycy"</h3>
-                        <p></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--end second row-->
-
-        <!--third row-->
-        <div class="row row-eq-height adoptedSpace">
-
-            <div class="col-sm-6 col-md-4">
-
-                <div class='thumbnail'>
-                    <a href="images/_DSC3952.jpg" data-caption="Image caption" caption='test' class='lightbox'>
-                        <img src="images/_DSC3952.jpg" alt="First image">
-                    </a>
-                    <div class="caption">
-                        <h3>"Boubou"</h3>
-                        <!-- <button type="button" class="btn btn-primary">More Info</button> -->
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-                <div class='thumbnail'>
-                    <a href="images/_DSC3951.jpg" class='lightbox'>
-                        <img src="images/_DSC3951.jpg" alt="Second image">
-                    </a>
-                    <div class="caption">
-                        <h3>"Boubou"</h3>
-                        <p></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-                <div class='thumbnail'>
                     <a href="images/_DSC3452.jpg" class='lightbox'>
-                        <img src="images/_DSC3452.jpg" alt="Third image">
+                        <img src="images/_DSC3452.jpg" alt="First image">
+                    </a>
+                    <div class="caption">
+                        <h3>"The bear"</h3>
+                        <!-- <button type="button" class="btn btn-primary">More Info</button> 
+                        data-caption="Image caption"-->
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class='thumbnail'>
+                    <a href="images/_DSC3450.jpg" class='lightbox'>
+                        <img src="images/_DSC3450.jpg" alt="Second image">
+                    </a>
+                    <div class="caption">
+                         <h3>"The bear"</h3>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class='thumbnail'>
+                    <a href="images/_DSC3516.jpg" class='lightbox'>
+                        <img src="images/_DSC3516.jpg" alt="Third image">
                     </a>
                     <div class="caption">
                         <h3>"The bear"</h3>
@@ -155,7 +161,60 @@
             </div>
         </div>
     </div>
-    <!--end third row-->
+</div>
+        <!--end second row-->
+        <div id="container" class="container gallery-container ">
+    <h1 class="textCenter">Shanya</h1>
+    <div class="tz-gallery galleryMargin">
+        <!--first row-->
+        <div class="row row-eq-height adoptedSpace galleryMargin">
+
+        <!--third row-->
+        <div class="row row-eq-height adoptedSpace">
+
+            <div class="col-sm-6 col-md-4">
+
+                <div class='thumbnail'>
+                    <a href="images/_DSC3457.jpg" data-caption="Image caption" caption='test' class='lightbox'>
+                        <img src="images/_DSC3457.jpg" alt="First image">
+                    </a>
+                    <div class="caption">
+                        <h3>"Shanya"</h3>
+                        <!-- <button type="button" class="btn btn-primary">More Info</button> -->
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class='thumbnail'>
+                    <a href="images/_DSC3481.jpg" class='lightbox'>
+                        <img src="images/_DSC3481.jpg" alt="Second image">
+                    </a>
+                    <div class="caption">
+                        <h3>"Shanya"</h3>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class='thumbnail'>
+                    <a href="images/_DSC3485.jpg" class='lightbox'>
+                        <img src="images/_DSC3485.jpg" alt="Third image">
+                    </a>
+                    <div class="caption">
+                        <h3>"Shanya"</h3>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+             <!--end third row-->
+        </div>
+    </div>
+    </div>
+        </div>
+   
 
     <!-- Button trigger modal -->
 
@@ -183,8 +242,8 @@
                         800 pounds.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Adopt!</button>
+                    <button type="button" class="btn btnAll" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btnAll">Adopt!</button>
                 </div>
             </div>
         </div>
@@ -209,7 +268,7 @@
                     <p>She's a cat and she's already adopted, donate now thank you.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btnAll" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

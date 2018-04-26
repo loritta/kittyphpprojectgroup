@@ -96,7 +96,7 @@ section:nth-of-type(6) {
 .insideWhite h2, .notMoving h2{
   text-align: left;
   padding-right: 10px;
-  font-weight:50px;
+  font-weight:bolder;
   text-shadow: 0 0 5px rgba(0,0,0,0.4);
   font-size: 1.3rem;
   font-weight: bold;
@@ -261,7 +261,6 @@ section:nth-of-type(6) {
 .right{
       position: fixed;
       right:2%;
-
       width:auto;
       float: left;
 
@@ -269,6 +268,7 @@ section:nth-of-type(6) {
 .textCenter{
   text-align: center;
 }
+
 
 
 .shadowPlay

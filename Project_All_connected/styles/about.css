@@ -33,6 +33,7 @@ and open the template in the editor.
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  
 }
 .aboutPhoto {
     -webkit-box-sizing: border-box;
@@ -67,12 +68,10 @@ color: #fff;
 
 .aboutEven{
     background: #e7e3e3;
-     margin-top: 2%;
     padding: 0.5%;
 }
 .aboutOdd{
     background: #fff;
-     margin-top: 2%;
     padding: 0.5%;
 }
 .aboutOdd p, .aboutEven p{
