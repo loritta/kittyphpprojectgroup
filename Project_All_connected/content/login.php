@@ -44,7 +44,7 @@ $passW="";
                     </noscript>
                 </div><br/>
             </div>
-            <button type="submit" id="submit" name="submit">Log in</button>
+            <button class="btn btnAll" type="submit" id="submit" name="submit">Log in</button>
         </form>
     </div>
 </div>

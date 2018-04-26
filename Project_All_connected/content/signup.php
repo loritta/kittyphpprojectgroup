@@ -353,6 +353,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         </table>
 
-        <button type="submit" id="submit" name="submit">Register</button>
+        <button class="btn btnAll" type="submit" id="submit" name="submit">Register</button>
     </form>
 </div>
