@@ -33,7 +33,7 @@
 
                     </a>
                     <div class="caption">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#theBearModalCenter">
+                        <button type="button" class="btn btnAll" data-toggle="modal" data-target="#theBearModalCenter">
                             "The Bear"
                         </button>
                         <!-- <button type="button" class="btn btn-primary">More Info</button> -->
@@ -49,7 +49,7 @@
                         <img src="images/_DSC3492.jpg" alt="Second image">
                     </a>
                     <div class="caption">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#busyaModalCenter">
+                        <button type="button" class="btn btnAll" data-toggle="modal" data-target="#busyaModalCenter">
                             "Busya"
                         </button>
                     </div>

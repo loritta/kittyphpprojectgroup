@@ -39,8 +39,8 @@
                 <small class="emailHelp" class="">We'll never share your personal information with anyone else.</small><br />
                 
             </div>
-                <button id="submit_form" name="submit_form" class="btnContact" type="button" onclick="validateForm();">Send</button>
-                <button id="clear_form" name="clear_form" class="btnContact" type="button" onclick="resetForm();">Reset</button>
+                <button id="submit_form" name="submit_form" class="btn btnAll" type="button" onclick="validateForm();">Send</button>
+                <button id="clear_form" name="clear_form" class="btn btnAll" type="button" onclick="resetForm();">Reset</button>
               </form>
 
         </div>

@@ -14,7 +14,7 @@
 
 <link rel="stylesheet" type="text/css" href="styles/adopt.css"/>
 
-<div class="banner">
+<div class="aboutEven aboutMain notMoving">
     <h1 class="textCenter">These kitties need a new home!</h1>
 </div>
 
@@ -31,7 +31,7 @@
 
                     </a>
                     <div class="caption">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#baileyModalCenter">
+                        <button type="button" class="btn btnAll" data-toggle="modal" data-target="#baileyModalCenter">
                             Bailey
                         </button>
                         <!-- <button type="button" class="btn btn-primary">More Info</button> -->
@@ -47,7 +47,7 @@
                         <img src="images/ForAdoption/Fromage.jpg" alt="Fromage">
                     </a>
                     <div class="caption">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#fromageModalCenter">
+                        <button type="button" class="btn btnAll" data-toggle="modal" data-target="#fromageModalCenter">
                             Fromage
                         </button>
                     </div>
@@ -60,7 +60,7 @@
                         <img src="images/ForAdoption/JohnSnow.jpg" alt="John Snow">
                     </a>
                     <div class="caption">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#johnSnowModalCenter">
+                        <button type="button" class="btn btnAll" data-toggle="modal" data-target="#johnSnowModalCenter">
                             John Snow
                         </button>
                     </div>
