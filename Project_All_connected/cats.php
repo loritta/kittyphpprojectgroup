@@ -63,8 +63,8 @@ require_once 'includes/function.php';
                             
                            <?php
                             if (isset($_SESSION['username'])) {
-                                //echo "<a class='navFont' href='cats.php?content=order'>ORDER</a>";
-                                echo '<a href="cats.php?content=logout&flush=true">LOG OUT</a>';
+                                echo "<a class='navFont' href='cats.php?content=order'>ORDER</a>";
+                                echo '<a class="navFont" href="cats.php?content=logout&flush=true">LOG OUT</a>';
                             } else {
                                 echo '<a href="cats.php?content=login">LOG IN</a>';
                             }
