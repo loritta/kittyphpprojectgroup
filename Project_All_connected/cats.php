@@ -1,11 +1,6 @@
 <?php
-/**
+session_start();
 
- *
- * Main content
-
- *
- *  */
 require_once 'includes/function.php';
 ?>
 
@@ -42,6 +37,14 @@ require_once 'includes/function.php';
 
                 We are located in Canada, Montreal. We may ship your kitten to your door in another province or country.
             </div>
+            <div style="position: absolute; top: 40px; right: 20px; ">
+                <?php
+                if (isset($_SESSION['username'])) {
+                    echo "Hi, " . ucfirst($_SESSION['username'])."!";
+                }
+                ?>
+
+            </div>
             <nav>
                 <div id="myNav" class="overlay">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -58,7 +61,14 @@ require_once 'includes/function.php';
                             <a class="navFont" href="cats.php?content=resources">Useful Resources</a>
                             <a class="navFont" href="cats.php?content=contact">Contact</a>
                             
-                            <a class="navFont" href="cats.php?content=login">Login</a>
+                           <?php
+                            if (isset($_SESSION['username'])) {
+                                //echo "<a class='navFont' href='cats.php?content=order'>ORDER</a>";
+                                echo '<a href="cats.php?content=logout&flush=true">LOG OUT</a>';
+                            } else {
+                                echo '<a href="cats.php?content=login">LOG IN</a>';
+                            }
+                            ?>
 
 
                         </div>
