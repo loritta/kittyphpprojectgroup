@@ -1,12 +1,4 @@
-<?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-?>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -21,8 +13,9 @@
 <div id="container" class="container gallery-container">
     <div class="tz-gallery">
         <!--first row-->
-        <div class="row row-eq-height adoptedSpace">
+        <div class="row row-eq-height adoptedSpace" id='row'>
 
+            <!--
             <div class="col-sm-6 col-md-4">
 
                 <div class='thumbnail'>
@@ -34,7 +27,6 @@
                         <button type="button" class="btn btnAll" data-toggle="modal" data-target="#baileyModalCenter">
                             Bailey
                         </button>
-                        <!-- <button type="button" class="btn btn-primary">More Info</button> -->
 
                     </div>
 
@@ -69,7 +61,7 @@
         </div>                          
         <!--end first row-->
         
-        
+        </div>
     </div>
     
     <!-- Bailey Modal -->
@@ -168,3 +160,56 @@
     });
 
 </script>
+
+
+<?php
+
+$servername = "den1.mysql2.gear.host";
+$username = "phpcats";
+$password = "Ii0EExX_H~yx";
+$dbname = "phpcats";
+
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT name, dob, vaccineA, vaccineB, deworming, availabilityDate, gender, description FROM cats";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        /*
+        echo "name: " . $row["name"]. " dob: " . $row["dob"]. " VaccineA: " . $row["vaccineA"].
+                " Vaccine B: " . $row["vaccineB"] . " deworming: " . $row["deworming"]. "avail date: " . $row["availabilityDate"].
+                " gender: " . $row["gender"] . " description: " . $row["description"] . "<br>";
+         * 
+         */
+        addThumbnail();
+    }
+} else {
+    echo "0 results";
+}
+
+$conn->close();
+
+function thumbnailInnerHTML() {
+    return "<div class='thumbnail'><a href='placeHolder' class='lightbox'><img src='images/ForAdoption/Bailey.jpg' alt='Bailey'></a>
+            <div class='caption'><button type='button' class='btn btnAll' data-toggle='modal' data-target='#baileyModalCenter'>Bailey</button>
+            </div></div></div>";
+}
+
+function addThumbnail() {
+    $innerHTML = thumbnailInnerHTML();
+    echo "<script>var newDiv = document.createElement('DIV');"
+            . "newDiv.className = 'col-sm-6 col-md-4';"
+            . 'newDiv.innerHTML = "' . $innerHTML . '";"'
+            . "document.getElementById('row').appendChild(newDiv);</script>;";
+
+}
+
+
+
