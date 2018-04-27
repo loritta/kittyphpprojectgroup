@@ -171,7 +171,14 @@ letter-spacing: 1.2px;
   width:110px;
   height: 110px;
 }
-
+.social{
+    display: block;
+    width:60px;
+    height: 60px;
+}
+.socialBlock{
+    display: inline-block;
+}
 
 @media screen and (max-height: 450px) {
   .overlay a {font-size: 20px}

@@ -50,15 +50,14 @@ require_once 'includes/function.php';
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     <div class="overlay-content row row-eq-height adoptedSpace">
                        
-                        <div class="col-sm-6 col-md-4">
+                        <div class="col-sm-12 col-md-4">
                             <a class="navFont <?php if(basename($_SERVER['SCRIPT_NAME']) == 'content/cats.php'){echo 'active'; }else { echo ''; } ?>"  href="cats.php">Home</a>
                             <a class="navFont <?php if(basename($_SERVER['SCRIPT_NAME']) == 'content/about.php'){echo 'active'; }else { echo ''; } ?>"  href="cats.php?content=about">About</a>
                             <a class="navFont <?php if(basename($_SERVER['SCRIPT_NAME']) == 'content/breeds.php'){echo 'active'; }else { echo ''; } ?>"  href="cats.php?content=breeds">Breeds</a>
                             <a class="navFont <?php if(basename($_SERVER['SCRIPT_NAME']) == 'content/adopted.php'){echo 'active'; }else { echo ''; } ?>"  href="cats.php?content=adopted">Our cats</a>
-                            
-                        </div>
-                        <div class="col-sm-6 col-md-4">
                             <a class="navFont <?php if(basename($_SERVER['SCRIPT_NAME']) == 'content/gallery.php'){echo 'active'; }else { echo ''; } ?>"  href="cats.php?content=gallery">For adoption</a>
+                        </div>
+                        <div class="col-sm-12 col-md-4">
                             <a class="navFont <?php if(basename($_SERVER['SCRIPT_NAME']) == 'content/resources.php'){echo 'active'; }else { echo ''; } ?>" href="cats.php?content=resources">Useful Resources</a>
                             <a class="navFont <?php if(basename($_SERVER['SCRIPT_NAME']) == 'content/contact.php'){echo 'active'; }else { echo ''; } ?>" href="cats.php?content=contact">Contact</a>
                             
@@ -75,9 +74,22 @@ require_once 'includes/function.php';
                                 echo '<a href="cats.php?content=login">LOG IN</a>';
                             }
                             ?>
-
-
                         </div>
+                            <div class="col-sm-12 col-md-4 center">
+                            <a href="#" >
+                            <img src="images/facebook-0.png" class='social' alt="Facebook page">
+                            </a>
+                            <a href="#" >
+                            <img src="images/instagram-0.png" class='social' alt="Instagram page">
+                            </a>
+                            <a href="#" >
+                            <img src="images/twitter-0.png" class='social' alt="Twitter page">
+                            </a>
+                            <a href="#" >
+                            <img src="images/youtube-0.png" class='social' alt="Youtube page">
+                            </a>
+                            </div>
+                        
                     </div>
                 </div>
                 <span class='pawIcon' style="font-size:30px;cursor:pointer" onclick="openNav()">
