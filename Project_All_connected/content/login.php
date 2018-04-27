@@ -25,7 +25,7 @@ $passW="";
         <small class="emailHelp" class="">* required fields</small><br />
         <p class="textCenter">Not registered with us? <a href='cats.php?content=signup' style='color:blue;'>Registration</a></p>
 
-        <form name="login" id="login" method="post" action="cats.php?content=login_result" autocomplete="off">  
+        <form name="login" id="login" method="post" action="cats.php?content=login" autocomplete="off">  
             <div class="box">
                 <label  for="username" >User name*:</label><br/>
                 <input class="formLabel" type="text" name="username" id="username" required="required"  maxlength="30"><br/>
