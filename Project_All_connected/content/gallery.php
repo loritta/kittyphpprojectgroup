@@ -94,8 +94,8 @@
                     </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Adopt!</button>
+                    <button type="button" class="btn btnAll" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btnAll">Adopt!</button>
                 </div>
             </div>
         </div>
@@ -123,8 +123,8 @@
                     </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Adopt!</button>
+                    <button type="button" class="btn btnAll" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btnAll">Adopt!</button>
                 </div>
             </div>
         </div>
@@ -151,8 +151,8 @@
                     </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Adopt!</button>
+                    <button type="button" class="btn btnAll" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btnAll">Adopt!</button>
                 </div>
             </div>
         </div>
