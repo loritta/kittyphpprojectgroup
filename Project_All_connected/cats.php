@@ -48,18 +48,19 @@ require_once 'includes/function.php';
             <nav>
                 <div id="myNav" class="overlay">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <div class="overlay-content">
-                        <div class="left">
-                            <a class="navFont active"  href="cats.php">Home</a>
-                            <a class="navFont"  href="cats.php?content=about">About</a>
-                            <a class="navFont"  href="cats.php?content=breeds">Breeds</a>
-                            <a class="navFont"  href="cats.php?content=adopted">Our cats</a>
+                    <div class="overlay-content row row-eq-height adoptedSpace">
+                       
+                        <div class="col-sm-6 col-md-4">
+                            <a class="navFont <?php if(basename($_SERVER['SCRIPT_NAME']) == 'content/cats.php'){echo 'active'; }else { echo ''; } ?>"  href="cats.php">Home</a>
+                            <a class="navFont <?php if(basename($_SERVER['SCRIPT_NAME']) == 'content/about.php'){echo 'active'; }else { echo ''; } ?>"  href="cats.php?content=about">About</a>
+                            <a class="navFont <?php if(basename($_SERVER['SCRIPT_NAME']) == 'content/breeds.php'){echo 'active'; }else { echo ''; } ?>"  href="cats.php?content=breeds">Breeds</a>
+                            <a class="navFont <?php if(basename($_SERVER['SCRIPT_NAME']) == 'content/adopted.php'){echo 'active'; }else { echo ''; } ?>"  href="cats.php?content=adopted">Our cats</a>
                             
                         </div>
-                        <div class="right">
-                            <a class="navFont"  href="cats.php?content=gallery">For adoption</a>
-                            <a class="navFont" href="cats.php?content=resources">Useful Resources</a>
-                            <a class="navFont" href="cats.php?content=contact">Contact</a>
+                        <div class="col-sm-6 col-md-4">
+                            <a class="navFont <?php if(basename($_SERVER['SCRIPT_NAME']) == 'content/gallery.php'){echo 'active'; }else { echo ''; } ?>"  href="cats.php?content=gallery">For adoption</a>
+                            <a class="navFont <?php if(basename($_SERVER['SCRIPT_NAME']) == 'content/resources.php'){echo 'active'; }else { echo ''; } ?>" href="cats.php?content=resources">Useful Resources</a>
+                            <a class="navFont <?php if(basename($_SERVER['SCRIPT_NAME']) == 'content/contact.php'){echo 'active'; }else { echo ''; } ?>" href="cats.php?content=contact">Contact</a>
                             
                            <?php
                             if (isset($_SESSION['username'])) {
