@@ -27,9 +27,9 @@ require_once 'includes/function.php';
         <link rel="stylesheet" href="styles/videoScreen.css" />
         <link rel="stylesheet" href="styles/about.css" />
         <link href="https://fonts.googleapis.com/css?family=Bevan|Cabin+Sketch|Fugaz+One|Indie+Flower|Nova+Mono|Righteous|Sacramento|Shadows+Into+Light+Two|Yatra+One" rel="stylesheet">
-          <link rel="STYLESHEET" type="text/css" href="styles/pwdwidget.css" />
-		<script src="scripts/pwdwidget.js" type="text/javascript"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="STYLESHEET" type="text/css" href="styles/pwdwidget.css" />
+        <script src="scripts/pwdwidget.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
         <header>
@@ -40,7 +40,7 @@ require_once 'includes/function.php';
             <div style="position: absolute; top: 40px; right: 20px; ">
                 <?php
                 if (isset($_SESSION['username'])) {
-                    echo "Hi, " . ucfirst($_SESSION['username'])."!";
+                    echo "Hi, " . ucfirst($_SESSION['username']) . "!";
                 }
                 ?>
 
@@ -49,69 +49,97 @@ require_once 'includes/function.php';
                 <div id="myNav" class="overlay">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     <div class="overlay-content row row-eq-height adoptedSpace">
-                       
+
                         <div class="col-sm-12 col-md-4">
-                            <a class="navFont <?php if(basename($_SERVER['SCRIPT_NAME']) == 'content/cats.php'){echo 'active'; }else { echo ''; } ?>"  href="cats.php">Home</a>
-                            <a class="navFont <?php if(basename($_SERVER['SCRIPT_NAME']) == 'content/about.php'){echo 'active'; }else { echo ''; } ?>"  href="cats.php?content=about">About</a>
-                            <a class="navFont <?php if(basename($_SERVER['SCRIPT_NAME']) == 'content/breeds.php'){echo 'active'; }else { echo ''; } ?>"  href="cats.php?content=breeds">Breeds</a>
-                            <a class="navFont <?php if(basename($_SERVER['SCRIPT_NAME']) == 'content/adopted.php'){echo 'active'; }else { echo ''; } ?>"  href="cats.php?content=adopted">Our cats</a>
-                            <a class="navFont <?php if(basename($_SERVER['SCRIPT_NAME']) == 'content/gallery.php'){echo 'active'; }else { echo ''; } ?>"  href="cats.php?content=gallery">For adoption</a>
-                        </div>
-                        <div class="col-sm-12 col-md-4">
-                            <a class="navFont <?php if(basename($_SERVER['SCRIPT_NAME']) == 'content/resources.php'){echo 'active'; }else { echo ''; } ?>" href="cats.php?content=resources">Useful Resources</a>
-                            <a class="navFont <?php if(basename($_SERVER['SCRIPT_NAME']) == 'content/contact.php'){echo 'active'; }else { echo ''; } ?>" href="cats.php?content=contact">Contact</a>
-                            
-                           <?php
-                            if (isset($_SESSION['username'])) {
-                                if ($_SESSION['username'] == 'admin') {
-                                    echo "<a class='navFont' href='cats.php?content=addcats'>ADD CATS</a>";
-                                    echo '<a class="navFont" href="cats.php?content=logout&flush=true">LOG OUT</a>';
-                                } else {
-                                    echo "<a class='navFont' href='cats.php?content=order'>ORDER</a>";
-                                    echo '<a class="navFont" href="cats.php?content=logout&flush=true">LOG OUT</a>';
-                                }
+                            <a class="navFont <?php if (basename($_SERVER['SCRIPT_NAME']) == 'content/cats.php') {
+                    echo 'active';
+                } else {
+                    echo '';
+                } ?>"  href="cats.php">Home</a>
+                            <a class="navFont <?php if (basename($_SERVER['SCRIPT_NAME']) == 'content=about') {
+                    echo 'active';
+                } else {
+                    echo '';
+                } ?>"  href="cats.php?content=about">About</a>
+                            <a class="navFont <?php if (basename($_SERVER['SCRIPT_NAME']) == 'content/breeds.php') {
+                    echo 'active';
+                } else {
+                    echo '';
+                } ?>"  href="cats.php?content=breeds">Breeds</a>
+                            <a class="navFont <?php if (basename($_SERVER['SCRIPT_NAME']) == 'content/adopted.php') {
+                                echo 'active';
                             } else {
-                                echo '<a href="cats.php?content=login">LOG IN</a>';
-                            }
-                            ?>
+                                echo '';
+                            } ?>"  href="cats.php?content=adopted">Our cats</a>
+                            <a class="navFont <?php if (basename($_SERVER['SCRIPT_NAME']) == 'content/gallery.php') {
+                                echo 'active';
+                            } else {
+                                echo '';
+                            } ?>"  href="cats.php?content=gallery">For adoption</a>
                         </div>
-                            <div class="col-sm-12 col-md-4 center">
+                        <div class="col-sm-12 col-md-4">
+                            <a class="navFont <?php if (basename($_SERVER['SCRIPT_NAME']) == 'content/resources.php') {
+                                echo 'active';
+                            } else {
+                                echo '';
+                            } ?>" href="cats.php?content=resources">Useful Resources</a>
+                            <a class="navFont <?php if (basename($_SERVER['SCRIPT_NAME']) == 'content/contact.php') {
+                                echo 'active';
+                            } else {
+                                echo '';
+                            } ?>" href="cats.php?content=contact">Contact</a>
+
+<?php
+if (isset($_SESSION['username'])) {
+    if ($_SESSION['username'] == 'admin') {
+        echo "<a class='navFont' href='cats.php?content=addcats'>ADD CATS</a>";
+        echo '<a class="navFont" href="cats.php?content=logout&flush=true">LOG OUT</a>';
+    } else {
+        echo "<a class='navFont' href='cats.php?content=order'>ORDER</a>";
+        echo '<a class="navFont" href="cats.php?content=logout&flush=true">LOG OUT</a>';
+    }
+} else {
+    echo '<a href="cats.php?content=login">LOG IN</a>';
+}
+?>
+                        </div>
+                        <div class="col-sm-12 col-md-4 center">
                             <a href="#" >
-                            <img src="images/facebook-0.png" class='social' alt="Facebook page">
+                                <img src="images/facebook-0.png" class='social' alt="Facebook page">
                             </a>
                             <a href="#" >
-                            <img src="images/instagram-0.png" class='social' alt="Instagram page">
+                                <img src="images/instagram-0.png" class='social' alt="Instagram page">
                             </a>
                             <a href="#" >
-                            <img src="images/twitter-0.png" class='social' alt="Twitter page">
+                                <img src="images/twitter-0.png" class='social' alt="Twitter page">
                             </a>
                             <a href="#" >
-                            <img src="images/youtube-0.png" class='social' alt="Youtube page">
+                                <img src="images/youtube-0.png" class='social' alt="Youtube page">
                             </a>
-                            </div>
-                        
+                        </div>
+
                     </div>
                 </div>
                 <span class='pawIcon' style="font-size:30px;cursor:pointer" onclick="openNav()">
-              <img src="images/paw_red.png" alt="Menu paw" class="avatar">
-          </span>
-               <!-- <a href="#menu" class="box-shadow-menu">
-                    Menu
-                </a>-->
+                    <img src="images/paw_red.png" alt="Menu paw" class="avatar">
+                </span>
+                <!-- <a href="#menu" class="box-shadow-menu">
+                     Menu
+                 </a>-->
 
             </nav>
         </header>
         <div id="home">
-            <?php loadContent('content', 'home'); ?>
+<?php loadContent('content', 'home'); ?>
         </div>
         <script>
-                    function openNav() {
-                        document.getElementById("myNav").style.display = "block";
-                    }
+            function openNav() {
+                document.getElementById("myNav").style.display = "block";
+            }
 
-                    function closeNav() {
-                        document.getElementById("myNav").style.display = "none";
-                    }
+            function closeNav() {
+                document.getElementById("myNav").style.display = "none";
+            }
         </script>
     </body>
 </html>

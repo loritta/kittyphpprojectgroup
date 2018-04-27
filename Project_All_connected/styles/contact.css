@@ -30,3 +30,7 @@ and open the template in the editor.
     width: 400px;
     text-align: center;
 }
+.hidden, #website
+{ display:none !important;
+left:-3000px;}
+
