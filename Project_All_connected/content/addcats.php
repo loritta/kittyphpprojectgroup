@@ -1,17 +1,18 @@
 <?php
-
+$servername = "den1.mysql2.gear.host";
+$username1 = "phpcats";
+$password1 = "Ii0EExX_H~yx";
+$dbname = "phpcats";
 
 $nameErr = $emailErr = $passErr = $cityErr = $prErr = $phErr = "";
 $name = $uName = $addr = $city = $province = $country = $pCode = $phone = $passW = $confPass = $email = "";
 $isBr = false;
 
-$result="";
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $servername = "den1.mysql2.gear.host";
-    $username1 = "phpcats";
-    $password1 = "Ii0EExX_H~yx";
-    $dbname = "phpcats";
+$result = "";
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+$GLOBALS['target_file'] = "images/" . basename($_FILES["fileupload"]["name"]);
 
 
 
@@ -19,13 +20,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!preg_match("/^[a-zA-Z -]*$/", $name)) {
         $nameErr = "Only letters, white space and dash allowed";
     }
-    $dob=$_POST['dob'];
-    $vaccineA=isset($_POST['checkb']);
-    $vaccineB=isset($_POST['checkb2']);
-    $deworm=isset($_POST['checkb3']);
-    $avD=$_POST['avDate'];
+    $dob = $_POST['dob'];
+    $vaccineA = isset($_POST['checkb']);
+    $vaccineB = isset($_POST['checkb2']);
+    $deworm = isset($_POST['checkb3']);
+    $avD = $_POST['avDate'];
     $adD = $_POST['adDate'];
-    $img = $_POST['fileupload'];
+    $imgPath =$GLOBALS['target_file'];
 
 
 //    $uName = filter_var(($_POST['username']), FILTER_SANITIZE_STRING);
@@ -60,10 +61,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //
 //
 //    $isBr = isset($_POST['checkb']);
-
-
-
-
 //    if ($_POST['regpwd'] != $_POST['confPassword']) {
 //
 //        $passErr = "Confirmation password doesn't match password!";
@@ -72,46 +69,47 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //    } else if ($emailErr != "") {
 //        ;
 //    } else {
-        try {
-            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username1, $password1);
-            // set the PDO error mode to exception
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    try {
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username1, $password1);
+        // set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            // prepare sql and bind parameters
-            $stmt = $conn->prepare("INSERT INTO cats ( name, dob,  vaccineA,  vaccineB, deworming, availabilityDate, adoptionDate) 
+        // prepare sql and bind parameters
+        $stmt = $conn->prepare("INSERT INTO cats ( name, dob,  vaccineA,  vaccineB, deworming, availabilityDate, adoptionDate) 
     VALUES ( :name, :dob,  :vaccineA,  :vaccineB, :deworming, :availabilityDate, :adoptionDate)");
-           
-           
-            $stmt->bindParam(':name', $name);
-            $stmt->bindParam(':dob', $dob);
-            $stmt->bindParam(':vaccineA', $vaccineA);
-            $stmt->bindParam(':vaccineB', $vaccineB);
-            $stmt->bindParam(':deworming', $deworm);
-            $stmt->bindParam(':availabilityDate', $avD);
-            $stmt->bindParam(':adoptionDate', $adD);
-          
 
-            $stmt->execute();
-            $last_id = $conn->lastInsertId();
-            if(isset($_POST['fileupload'])){
-                $stmt = $conn->prepare("INSERT INTO catsimages (catId, image)
+
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':dob', $dob);
+        $stmt->bindParam(':vaccineA', $vaccineA);
+        $stmt->bindParam(':vaccineB', $vaccineB);
+        $stmt->bindParam(':deworming', $deworm);
+        $stmt->bindParam(':availabilityDate', $avD);
+        $stmt->bindParam(':adoptionDate', $adD);
+
+
+        $stmt->execute();
+        $last_id = $conn->lastInsertId();
+        if (isset($imgPath)) {
+            $stmt = $conn->prepare("INSERT INTO catsimages (catId, image)
     VALUES ( :catId, :image)");
-           
-           
+
+
             $stmt->bindParam(':catId', $last_id);
-            $stmt->bindParam(':image', $img);
-               
-          
+            $stmt->bindParam(':image', $imgPath);
+
+
 
             $stmt->execute();
-                
-            }
-           $result= "Successfully added.";
-        } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
         }
-        $conn = null;
+        $result = "Successfully added.";
+        ?><script>alert("Entry was succesfully added");
+        </script> <?php
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
     }
+    $conn = null;
+}
 //}
 ?>
 
@@ -120,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div id="regMain" style="margin: auto; width: 50%">
     <h1 class="title">Add a cat</h1>
     <p>* required fields</p>
-    <form name="signup" id="signup" method="post" action="cats.php?content=addcats" autocomplete="off">  
+    <form name="signup" id="signup" method="post" action="cats.php?content=addcats" autocomplete="off" enctype="multipart/form-data">  
 
         <label class="formLabel" for="name" >Name*:</label><br/>
         <input class="formLabel" type="text" name="name" id="name" required="required"  maxlength="100" size="35" value="<?php echo $name; ?>"><br/>
@@ -137,7 +135,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
         ?>><br/>
-         <label class="formLabel" for="checkb2" >Vaccine B*:</label>
+        <label class="formLabel" for="checkb2" >Vaccine B*:</label>
         <input type="checkbox" id="checkb2"  name="checkb2" <?php
         if (isset($_POST['checkb2'])) {
             if ($_POST['checkb2']) {
@@ -145,7 +143,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
         ?>><br/>
-<label class="formLabel" for="checkb3" >Deworming*:</label>
+        <label class="formLabel" for="checkb3" >Deworming*:</label>
         <input type="checkbox" id="checkb3"  name="checkb3" <?php
         if (isset($_POST['checkb3'])) {
             if ($_POST['checkb3']) {
@@ -154,17 +152,97 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         ?>><br/>
 
-<label class="formLabel" for="avDate" >Availability Date:</label><br/>
+        <label class="formLabel" for="avDate" >Availability Date:</label><br/>
         <input class="formLabel" type="date" name="avDate" id="avDate"    value="<?php echo $name; ?>"><br/>
 
-<label class="formLabel" for="adDate" >Adoption Date:</label><br/>
+        <label class="formLabel" for="adDate" >Adoption Date:</label><br/>
         <input class="formLabel" type="date" name="adDate" id="adDate"    value="<?php echo $name; ?>"><br/>
-        
+
         <label for="fileupload"> Select an image to upload</label><br/>
-        <input type="file" name="fileupload" id="fileupload"> <br/><br/>
-
-
+        <input type="file" name="fileupload" id="fileupload" accept="image/*" onchange="loadFile(event)"><br/>
+        <img id="output" width="50" height="50"/><br/><br/>
+        <script>
+            var loadFile = function (event) {
+                var output = document.getElementById('output');
+                output.src = URL.createObjectURL(event.target.files[0]);
+            };
+        </script>
+<!--        <script type="text/javascript">
+            function getFilePath() {
+                $('input[type=file]').change(function () {
+                    var filePath = $('#fileupload').val();
+                    <?php $path = "<script>document.write(filePath)</script>" ;?>   
+                });
+            }
+        </script>-->
 
         <button type="submit" id="submit" name="submit">Save</button>
-    </form><br/><?php echo $result; ?>
+    </form><br/>
 </div>
+<?php
+$conn = new mysqli($servername, $username1, $password1, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM cats";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    echo "<table><tr><th>ID</th><th>Name</th></tr>";
+    // output data of each row
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr><td>" . $row["id"] . "</td><td>" . $row["name"] . "</td></tr>";
+    }
+    echo "</table>";
+} else {
+    echo "0 cats";
+}
+$conn->close();
+?>
+     
+<?php
+$target_dir = "images/";
+$GLOBALS['target_file'] = $target_dir . basename($_FILES["fileupload"]["name"]);
+$uploadOk = 1;
+$imageFileType = strtolower(pathinfo($GLOBALS['target_file'],PATHINFO_EXTENSION));
+// Check if image file is a actual image or fake image
+if(isset($_POST["submit"])) {
+    $check = getimagesize($_FILES["fileupload"]["tmp_name"]);
+    if($check !== false) {
+        echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "File is not an image.";
+        $uploadOk = 0;
+    }
+}
+// Check if file already exists
+if (file_exists($GLOBALS['target_file'])) {
+    echo "Sorry, file already exists.";
+    $uploadOk = 0;
+}
+// Check file size
+if ($_FILES["fileupload"]["size"] > 500000) {
+    echo "Sorry, your file is too large.";
+    $uploadOk = 0;
+}
+// Allow certain file formats
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+    $uploadOk = 0;
+}
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+    echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+} else {
+    if (move_uploaded_file($_FILES["fileupload"]["tmp_name"], $GLOBALS['target_file'])) {
+        echo "The file ". basename( $_FILES["fileupload"]["name"]). " has been uploaded.";
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+    }
+}
+?>
