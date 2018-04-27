@@ -1,0 +1,128 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+body {
+    font-family: 'Anton', sans-serif;
+    background-color: rgba(191,175,166, 0.1);
+}
+
+.pageBanner {
+    margin-top: -1%;
+    background-color: #069FDD;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 2% 0% 2% 0%;
+}
+
+.pageBanner h1 {
+    color: white;
+}
+
+#container{
+    background-color: rgba(191,175,166, 0.1);
+    border-right: 5%;      
+}
+
+.thumbnail {
+    background-color: rgba(191,175,166, 0.1) !important;
+}
+
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+
+}
+
+.gallery-container h1 {
+    text-align: center;
+    margin-top: 70px;
+    font-weight: bold;
+    color: #58595a;
+}
+
+.gallery-container p.page-description {
+    text-align: center;
+    margin: 30px auto;
+    font-size: 18px;
+    color: #85878c;
+}
+
+.tz-gallery {
+    padding: 40px;
+    margin-top: 5%;
+}
+
+.tz-gallery .thumbnail {
+    padding: 0;
+    background-color: #bfafa6;
+    border-radius: 4px;
+    border: none;
+    transition: 0.15s ease-in-out;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+    transition: transform 0.4s ease;
+    width: auto;
+}
+
+.tz-gallery .thumbnail:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.tz-gallery .lightbox img {
+    border-radius: 4px 4px 0 0;
+    height: 250px;
+    min-width: 250px;
+    width: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.tz-gallery .caption {
+    padding: 5px 0px 5px 0px;
+    text-align: center;
+    color: #fff;
+}
+
+.tz-gallery .caption h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0;
+    color: #fff;
+}
+
+.tz-gallery .caption p {
+    font-size: 12px;
+    color: #fff;
+    margin: 0;
+}
+
+.adoptedSpace{
+    margin-bottom: 10px;
+}
+
+.banner {
+    margin-top: 2%;
+    padding: 4%;
+}
+
+.modal {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 10040;
+    overflow: auto;
+    overflow-y: auto;       
+}
+
+
+

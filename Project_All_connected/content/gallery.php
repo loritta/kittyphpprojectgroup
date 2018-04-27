@@ -12,204 +12,147 @@
 
 <div id="container" class="container gallery-container">
     <div class="tz-gallery">
-        <!--first row-->
         <div class="row row-eq-height adoptedSpace" id='row'>
 
-            <!--
-            <div class="col-sm-6 col-md-4">
 
-                <div class='thumbnail'>
-                    <a href="images/ForAdoption/Bailey.jpg" class='lightbox'>
-                        <img src="images/ForAdoption/Bailey.jpg" alt="Bailey">
 
-                    </a>
-                    <div class="caption">
-                        <button type="button" class="btn btnAll" data-toggle="modal" data-target="#baileyModalCenter">
-                            Bailey
-                        </button>
-
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-                <div class='thumbnail'>
-                    <a href="images/ForAdoption/Fromage.jpg" class='lightbox'>
-                        <img src="images/ForAdoption/Fromage.jpg" alt="Fromage">
-                    </a>
-                    <div class="caption">
-                        <button type="button" class="btn btnAll" data-toggle="modal" data-target="#fromageModalCenter">
-                            Fromage
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-                <div class='thumbnail'>
-                    <a href="images/ForAdoption/JohnSnow.jpg" class='lightbox'>
-                        <img src="images/ForAdoption/JohnSnow.jpg" alt="John Snow">
-                    </a>
-                    <div class="caption">
-                        <button type="button" class="btn btnAll" data-toggle="modal" data-target="#johnSnowModalCenter">
-                            John Snow
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>                          
-        <!--end first row-->
-        
-        </div>
-    </div>
-    
-    <!-- Bailey Modal -->
-    <div class="modal fade" id="baileyModalCenter" tabindex="-1" role="dialog" aria-labelledby="baileyModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="baileyModalLongTitle">Bailey</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <h6>Breed: Cat</h6><br />
-                    <h6>Age: 2</h6><br />
-                    <h6>Gender: Female</h6><br />
-                    <h6>Vaccinated: Yes</h6><br />
-                    <h6>De-Clawed: Yes</h6><br />
-                    <h6>About Bailey</h6>
-                    <p>A female cat with blue eyes, she loves staring at walls and making you believe in 
-                        ghosts again.
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btnAll" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btnAll">Adopt!</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Fromage Modal -->
-    <div class="modal fade" id="fromageModalCenter" tabindex="-1" role="dialog" aria-labelledby="fromageModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="fromageModalLongTitle">Fromage</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <h6>Breed: Cat</h6><br />
-                    <h6>Age: 3 months</h6><br />
-                    <h6>Gender: Male</h6><br />
-                    <h6>Vaccinated: No</h6><br />
-                    <h6>De-Clawed: No</h6><br />
-                    <h6>About Fromage</h6>
-                    <p>Fromage means "cheese" in french. We call him that because he likes cheese and has some
-                        stuck on his face constantly. Also he never smiles.
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btnAll" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btnAll">Adopt!</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- John Snow Modal -->
-    <div class="modal fade" id="johnSnowModalCenter" tabindex="-1" role="dialog" aria-labelledby="johnSnowModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="johnSnowModalLongTitle">John Snow</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <h6>Breed: Cat</h6><br />
-                    <h6>Age: 2 months</h6><br />
-                    <h6>Gender: Male</h6><br />
-                    <h6>Vaccinated: No</h6><br />
-                    <h6>De-Clawed: No</h6><br />
-                    <h6>About John Snow</h6>
-                    <p>Not named after a certain popular HBO series.
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btnAll" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btnAll">Adopt!</button>
-                </div>
-            </div>
         </div>
     </div>
 </div>
-
-<script>
-    baguetteBox.run('.tz-gallery', {
-        captions: true,
-        noScrollbars: false,
-        animation: 'slideIn',
-        buttons: true
-    });
-
-</script>
-
-
 <?php
 
-$servername = "den1.mysql2.gear.host";
-$username = "phpcats";
-$password = "Ii0EExX_H~yx";
-$dbname = "phpcats";
+function getConnection() {
+    $servername = "den1.mysql2.gear.host";
+    $username = "phpcats";
+    $password = "Ii0EExX_H~yx";
+    $dbname = "phpcats";
 
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    return $conn;
+}
 
-$sql = "SELECT name, dob, vaccineA, vaccineB, deworming, availabilityDate, gender, description FROM cats";
+$conn = getConnection();
+
+$sql = "SELECT id, name, dob, vaccineA, vaccineB, deworming, availabilityDate, gender, description FROM cats";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        /*
-        echo "name: " . $row["name"]. " dob: " . $row["dob"]. " VaccineA: " . $row["vaccineA"].
-                " Vaccine B: " . $row["vaccineB"] . " deworming: " . $row["deworming"]. "avail date: " . $row["availabilityDate"].
-                " gender: " . $row["gender"] . " description: " . $row["description"] . "<br>";
-         * 
-         */
-        addThumbnail();
+
+    while ($row = $result->fetch_assoc()) {
+        
+        // if the availability date is 0000-00-00, consider the cat adopted and dont display it
+        $availDate = $row['availabilityDate'];
+
+        if ($availDate == '0000-00-00') {
+            continue;
+        }
+
+        $id = $row['id'];
+        $name = $row["name"];
+        $dob = $row['dob'];
+        $vaccineA = ((bool) $row['vaccineA']) ? 'yes' : 'no';
+        $vaccineB = ((bool) $row['vaccineB']) ? 'yes' : 'no';
+        $deworming = ((bool) $row['deworming']) ? 'yes' : 'no';
+        
+        ($row['gender'] === null) ? $gender = 'Unknown' : $gender = $row['gender'];
+        ($row['description'] === null) ? $description = 'No description' : $description = row['description'];
+
+
+        $imageLink = getImageLink($id);
+
+        if ($imageLink === null) {
+            $imageLink = 'images/noimage.jpeg';
+        }
+
+        addThumbnail($name, $imageLink);
+        createModal($name, $dob, $gender, $vaccineA, $vaccineB, $deworming, $availDate, $description);
     }
 } else {
     echo "0 results";
 }
 
+runGallery();
+
 $conn->close();
 
-function thumbnailInnerHTML() {
-    return "<div class='thumbnail'><a href='placeHolder' class='lightbox'><img src='images/ForAdoption/Bailey.jpg' alt='Bailey'></a>
-            <div class='caption'><button type='button' class='btn btnAll' data-toggle='modal' data-target='#baileyModalCenter'>Bailey</button>
-            </div></div></div>";
+function thumbnailInnerHTML($name, $imageLink) {
+    return "\"<div class='thumbnail'>\" + 
+            \"<a href='" . $imageLink . "' class='lightbox'><img src='" . $imageLink . "' alt='" . $name . "'></a>\" + 
+            \"<div class='caption'>\" + 
+            \"<button type='button' class='btn btnAll' data-toggle='modal' data-target='#" . $name . "ModalCenter'>" . $name . "</button>\" +
+            \"</div></div>\"";
 }
 
-function addThumbnail() {
-    $innerHTML = thumbnailInnerHTML();
-    echo "<script>var newDiv = document.createElement('DIV');"
-            . "newDiv.className = 'col-sm-6 col-md-4';"
-            . 'newDiv.innerHTML = "' . $innerHTML . '";"'
-            . "document.getElementById('row').appendChild(newDiv);</script>;";
+function addThumbnail($name, $imageLink) {
 
+    $innerHTML = thumbnailInnerHTML($name, $imageLink);
+    echo "<script>var newDiv = null;" .
+    " newDiv = document.createElement('DIV');" .
+    " newDiv.className = 'col-sm-6 col-md-4';" .
+    " newDiv.innerHTML = " . $innerHTML . ";" .
+    " document.getElementById('row').appendChild(newDiv);</script>;";
 }
 
+function getImageLink($id) {
 
+    $conn = getConnection();
 
+    $sql = "SELECT image FROM catsimages WHERE catId = " . $id;
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+
+        while ($row = $result->fetch_assoc()) {
+
+            return $row['image'];
+        }
+    } else {
+        return null;
+    }
+}
+
+function runGallery() {
+    echo "<script>
+            baguetteBox.run('.tz-gallery', {
+                captions: true,
+                noScrollbars: false,
+                animation: 'slideIn',
+                buttons: true
+            });
+            </script>";
+}
+
+function createModal($name, $dob, $gender, $vaccineA, $vaccineB, $deworming, $availDate, $description) {
+    echo "
+    <div class='modal fade' id='" . $name . "ModalCenter' tabindex='-1' role='dialog' aria-labelledby='" . $name . "ModalCenterTitle' 
+        aria-hidden='true'>
+        <div class='modal-dialog modal-dialog-centered' role='document'>
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <h5 class='modal-title' id='" . $name . "ModalLongTitle'>" . $name . "</h5>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                        <span aria-hidden='true'>&times;</span>
+                    </button>
+                </div>
+                <div class='modal-body'>
+                    <h6>Date of Birth: " . $dob . "</h6><br />
+                    <h6>Gender: " . $gender . "</h6><br />
+                    <h6>Vaccine A: " . $vaccineA . "</h6><br />
+                    <h6>Vaccine B: " . $vaccineB . "</h6><br />  
+                    <h6>Dewormed: " . $deworming . "</h6><br />
+                    <h6>Availability Date: " . $availDate . "</h6><br /> 
+                    <h6>Description: " . $description . "</h6><br />
+                </div>
+                <div class='modal-footer'>
+                    <button type='button' class='btn btnAll' data-dismiss='modal'>Close</button>
+                    <button type='button' class='btn btnAll'>Adopt " . $name . "!</button>
+                </div>
+            </div>
+        </div>
+    </div>";
+}
