@@ -9,7 +9,7 @@ body {
 }
 
 .pageBanner {
-    margin-top: -1%;
+    margin-top: 5.5%;
     background-color: #069FDD;
     display: block;
     width: 100%;
@@ -20,6 +20,23 @@ body {
 .pageBanner h1 {
     color: white;
 }
+
+.mainHeader {
+    margin-top: 5%;
+    text-align: center;
+}
+
+.mainHeader h2 {
+    border: 1px solid #85878c;
+    border-radius: 10px;
+    margin-top: 4%;
+    padding: 2%;
+    display: inline-block;
+    background-color: #337AB7;
+    color: white;
+
+}
+
 
 #container{
     background-color: rgba(191,175,166, 0.1);
@@ -36,7 +53,7 @@ body {
 .carousel-inner > .item > a > img {
     display: block;
     max-width: 100%;
-    height: auto;
+    height: 300px;
 
 }
 
@@ -56,11 +73,12 @@ body {
 
 .tz-gallery {
     padding: 40px;
-    margin-top: 5%;
+    margin-top: 0;
 }
 
 .tz-gallery .thumbnail {
     padding: 0;
+    margin-bottom: 6%;
     background-color: #bfafa6;
     border-radius: 4px;
     border: none;
@@ -68,6 +86,11 @@ body {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
     transition: transform 0.4s ease;
     width: auto;
+}
+
+.tz-gallery .thumbnail button:hover {
+    background-color: #1D3FBB;
+    color: white;
 }
 
 .tz-gallery .thumbnail:hover {
@@ -97,7 +120,7 @@ body {
     font-size: 14px;
     font-weight: bold;
     margin-top: 0;
-    color: #fff;
+    color: #fff;    
 }
 
 .tz-gallery .caption p {
@@ -116,13 +139,15 @@ body {
 }
 
 .modal {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     z-index: 10040;
     overflow: auto;
     overflow-y: auto;       
 }
+
+
 
 
 
