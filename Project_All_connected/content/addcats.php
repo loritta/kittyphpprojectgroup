@@ -5,7 +5,7 @@ $password1 = "Ii0EExX_H~yx";
 $dbname = "phpcats";
 
 $idErr = $nameErr = $emailErr = $passErr = $cityErr = $prErr = $phErr = "";
-$name = $uName = $addr = $city = $province = $country = $pCode = $phone = $passW = $confPass = $email = "";
+$name = $gender = $descr = "";
 $isBr = false;
 
 $result = "";
@@ -42,7 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $avD = $_POST['avDate'];
     $adD = $_POST['adDate'];
     $imgPath = $GLOBALS['target_file'];
-
+    $gender = $_POST['gender'];
+    $descr = filter_var($_POST['description'], FILTER_SANITIZE_STRING);
 
 //    $uName = filter_var(($_POST['username']), FILTER_SANITIZE_STRING);
 //
@@ -90,9 +91,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // prepare sql and bind parameters
-        if (($catId=="...")) {
+        if (($catId == "...")) {
             $stmt = $conn->prepare("INSERT INTO cats ( name, dob,  vaccineA,  vaccineB, deworming, availabilityDate, adoptionDate) 
-    VALUES ( :name, :dob,  :vaccineA,  :vaccineB, :deworming, :availabilityDate, :adoptionDate)");
+    VALUES ( :name, :dob,  :vaccineA,  :vaccineB, :deworming, :availabilityDate, :adoptionDate, :gender, :description)");
 
 
             $stmt->bindParam(':name', $name);
@@ -102,11 +103,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt->bindParam(':deworming', $deworm);
             $stmt->bindParam(':availabilityDate', $avD);
             $stmt->bindParam(':adoptionDate', $adD);
-
-
+            $stmt->bindParam(':adoptionDate', $gender);
+            $stmt->bindParam(':adoptionDate', $descr);
             $stmt->execute();
             $last_id = $conn->lastInsertId();
-            if ($imgPath!="" &&$imgPath!="images/" ) {
+            if ($imgPath != "" && $imgPath != "images/") {
                 $stmt = $conn->prepare("INSERT INTO catsimages (catId, image)
     VALUES ( :catId, :image)");
 
@@ -119,8 +120,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $stmt->execute();
             }
         } else {
-            $sql = "UPDATE cats SET name='".$name."', dob='".$dob."', vaccineA='".$vaccineA."', vaccineB='".$vaccineB."',"
-                    . "deworming='".$deworm."',availabilityDate='".$avD."',  adoptionDate='".$adD."'  WHERE id=".$catId.";";
+            $sql = "UPDATE cats SET name='" . $name . "', dob='" . $dob . "', vaccineA='" . $vaccineA . "', vaccineB='" . $vaccineB . "',"
+                    . "deworming='" . $deworm . "',availabilityDate='" . $avD . "',  adoptionDate='" . $adD . "',  gender='" . $gender . "',  "
+                    . "description='" . $descr . " '  WHERE id=" . $catId . ";";
 
             // Prepare statement
             $stmt = $conn->prepare($sql);
@@ -129,16 +131,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt->execute();
 
             // echo a message to say the UPDATE succeeded
-            echo $stmt->rowCount() . " records UPDATED successfully";
-            if ($imgPath!="" &&$imgPath!="images/" ) {
-                $stmt = $conn->prepare("UPDATE  catsimages SET image=".$imgPath."WHERE catId=".$catId.";");
+            ?><script>
+                var numbRec = <?php echo json_encode($stmt->rowCount()); ?>;
+                alert(numbRec + " records UPDATED successfully");</script><?php
+            if ($imgPath != "" && $imgPath != "images/") {
+                $stmt = $conn->prepare("UPDATE  catsimages SET image=" . $imgPath . "WHERE catId=" . $catId . ";");
 
 
                 // Prepare statement
-            $stmt = $conn->prepare($sql);
+                $stmt = $conn->prepare($sql);
 
-            // execute the query
-            $stmt->execute();
+                // execute the query
+                $stmt->execute();
             }
         }
         ?><script>alert("Entry was succesfully added");
@@ -160,12 +164,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div >
                     <h1 class="title">Add a cat</h1>
                     <p>* required fields</p>
-                    <form name="signup" id="signup" method="post" action="cats.php?content=addcats" autocomplete="off" enctype="multipart/form-data">  
+                    <form name="addcats" id="addcats" method="post" action="cats.php?content=addcats" autocomplete="off" enctype="multipart/form-data">  
                         <label class="formLabel" for="catId" >Cat Id:</label><br/>
-                        <input class="formLabel" type="text" name="catId" id="catId" maxlength="10" size="35" value="..."><br/>
+                        <input class="formLabel" type="text" name="catId" id="catId" maxlength="10" size="25" value="..."><br/>
                         <span class="error"> <?php echo $idErr; ?></span><br/>
                         <label class="formLabel" for="name" >Name*:</label><br/>
-                        <input class="formLabel" type="text" name="name" id="name" required="required"  maxlength="100" size="35" value="<?php echo $name; ?>"><br/>
+                        <input class="formLabel" type="text" name="name" id="name" required="required"  maxlength="100" size="25" value="<?php echo $name; ?>"><br/>
                         <span class="error"> <?php echo $nameErr; ?></span><br/>
 
                         <label class="formLabel" for="name" >DOB*:</label><br/>
@@ -211,7 +215,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 output.src = URL.createObjectURL(event.target.files[0]);
                             };
                         </script>
+                        <label for='gender'>Gender</label><br>
+                        <input type="radio" name="gender" value="male" checked> Male<br>
+                        <input type="radio" name="gender" value="female"> Female<br>
 
+                        <label for='description'>Description</label><br>
+                        <textarea rows="4" cols="50" name="description" id="description"></textarea><br>
 
                         <button type="submit" id="submit" name="submit">Save</button>
                     </form><br/>
@@ -286,7 +295,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             document.getElementById("catId").value = x.substring(x.lastIndexOf("#") + 1, x.lastIndexOf(" Name: "));
                             document.getElementById("name").value = x.substring(x.lastIndexOf("Name: ") + 6, x.lastIndexOf("DOB: "));
                             document.getElementById("dob").value = x.substring(x.lastIndexOf("DOB: ") + 5, x.lastIndexOf("Vaccine A: "));
-                            //document.getElementById("checkb").value=x.substring(x.lastIndexOf("A: ")+3,x.lastIndexOf("Vaccine B: "));
+                           
 
 
                             var temp = x.substring(x.lastIndexOf("A: ") + 3, x.lastIndexOf("Vaccine B: "));
@@ -305,9 +314,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             document.getElementById("avDate").value = x.substring(x.lastIndexOf("Availability Date: ") + 19, x.lastIndexOf("Adoption"));
                             document.getElementById("adDate").value = x.substring(x.lastIndexOf("Adoption Date: ") + 15, x.lastIndexOf("Gender"));
 
+                            var temp7 = x.substring(x.lastIndexOf("Gender: ") + 8, x.lastIndexOf("Description: "));
+                            var temp8 = (temp7 == "male") ? true : false;
+                            if(temp8){
+                            document.addcats.gender[0].checked = true;
+                        }else {document.addcats.gender[1].checked = true;}
+                            document.getElementById("description").value = x.substring(x.lastIndexOf("Description: ") + 13, x.lastIndexOf("Image Path:"));
+                            
                             var path = x.substring(x.lastIndexOf("Image Path: ") + 12, x.lastIndexOf("label"));
                             document.getElementById("output").src = path;
-                            document.getElementById("fileupload").value = "path.jpg";
+                            //document.getElementById("fileupload").value = "path.jpg";
                         }
                     </script>
 
