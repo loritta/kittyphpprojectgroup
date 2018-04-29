@@ -99,13 +99,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-<div id="regMain" style="margin: auto; width: 50%">
-    <h1 class="title">Registration</h1>
-    <p>* required fields</p>
-    <form name="signup" id="signup" method="post" action="cats.php?content=signup" autocomplete="off">  
-        <table style="width:60%">
+            <link rel="stylesheet" type="text/css" href="styles/contact.css"/>
+<div class="aboutMain aboutEven">
+    <div class="registrationFrame notMoving">
 
-            <tr><td>
+        <h1 class="title textCenter">Registration</h1>
+        <small class="emailHelp" class="">* required fields</small>
+    <form name="signup" id="signup" method="post" action="cats.php?content=signup" autocomplete="off">  
+        <div id="container" class="container">
+
+            <div class="row row-eq-height adoptedSpace">
+                <div class="box col-sm-12 col-md-6">
                     <label class="formLabel" for="name" >Name*:</label><br/>
                     <input class="formLabel" type="text" name="name" id="name" required="required"  maxlength="100" size="35" value="<?php echo $name; ?>"><br/>
                     <span class="error"> <?php echo $nameErr; ?></span><br/>
@@ -128,8 +132,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     <label class="formLabel" for="pCode" >Postal code*:</label><br/>
                     <input class="formLabel" type="text" name="pCode" id="pCode" required="required"  maxlength="10" size="35" value="<?php echo $pCode; ?>"><br/>
-                </td>
-                <td>
+                </div>
+                <div class="box col-sm-12 col-md-6">
                     <label class="formLabel" for="country">Country*:</label><br/>
                     <select class="formLabel" id="country" name="country">
 
@@ -298,7 +302,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <option value="Sweden">Sweden</option>
                         <option value="Switzerland">Switzerland</option>
                         <option value="Syria">Syria</option>
-                        <option value="Tajikistan">Tajikistan</option>
+                        <option value="Tajikistan">Tadjikistan</option>
                         <option value="Tanzania">Tanzania</option>
                         <option value="Thailand">Thailand</option>
                         <option value="Togo">Togo</option>
@@ -346,13 +350,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     <label class="formLabel" for="checkb" >Are you a breeder?</label>
                     <input type="checkbox" id="checkb"  name="checkb" <?php if(isset($_POST['checkb'])){ if($_POST['checkb']){ echo "checked='checked'";}} ?>><br/>
-                </td>
-            </tr>
+                </div>
+            </div>
 
 
 
-        </table>
+        </div>
 
         <button class="btn btnAll" type="submit" id="submit" name="submit">Register</button>
     </form>
+    </div>
 </div>

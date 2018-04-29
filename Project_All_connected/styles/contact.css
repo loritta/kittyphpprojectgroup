@@ -8,7 +8,15 @@ and open the template in the editor.
     Author     : larisasabalin
 */
 
-
+.registarationFrame{
+    margin:100px;
+    background: #fff !important;
+    padding: 20px;
+    border-radius: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
 .formFrame{
     margin:100px;
     background: #fff;
@@ -33,4 +41,14 @@ and open the template in the editor.
 .hidden, #website
 { display:none !important;
 left:-3000px;}
+
+.boxLogin{
+   
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: 400px;
+    text-align: left;
+}
 

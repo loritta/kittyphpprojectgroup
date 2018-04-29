@@ -26,20 +26,20 @@ $passW = "";
             <div class="box">
                 <label  for="username" >User name*:</label><br/>
                 <input class="formLabel" type="text" name="username" id="username" required="required"  maxlength="30"><br/>
-                <div class='para'>
-
+                <div class='boxLogin'>
                     <label for='regpwd'>Password*:</label> <br />
-                    <div class='pwdwidgetdiv' id='thepwddiv'></div>
+                    <noscript class="">
+                    <input class="formLabel" type='password' id='regpwd' name='regpwd' />		
+                    </noscript>
+                    <div class="pwdwidgetdiv" id='thepwddiv'></div>
                     <script type="text/javascript">
                         var pwdwidget = new PasswordWidget('thepwddiv', 'regpwd');
                         pwdwidget.enableGenerate = false;
                         pwdwidget.enableShowStrength = false;
                         pwdwidget.MakePWDWidget();
                     </script>
-                    <noscript>
-                    <div><input class="formLabel" type='password' id='regpwd' name='regpwd' /></div>		
-                    </noscript>
-                </div><br/>
+                    
+              </div> <br/>
             </div>
             <button class="btn btnAll" type="submit" id="submit" name="submit">Log in</button>
         </form>
