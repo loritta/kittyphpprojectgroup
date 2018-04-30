@@ -84,7 +84,7 @@ color: #fff;
 }
 
 .aboutText h1{
-    text-transform: uppercase;
+  text-transform: uppercase;
   letter-spacing: 0.8px;
   font-weight:100;
   text-shadow: 0 0 5px rgba(0,0,0,0.4);
@@ -101,4 +101,81 @@ color: #fff;
   font-weight: bold;
   margin-top: 2px;
   width: 120px;
+}
+.resourcesPhoto{
+    -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+    height: 120vh;
+  text-transform: uppercase;
+  font-size: 3vw;
+  background-image: url(../images/_DSC3999.jpg);
+color: #fff;
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+.resourcesMain{
+    height: 25vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+}
+.resCenter{
+    padding:1em;
+    text-align: center;
+    display:inline-block;
+    text-decoration: none !important;
+    margin:0 auto;
+
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.resCenter p{
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight:100;
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+  font-size: 1.9rem;
+  margin: 2%;
+  padding: 0;
+}
+.resContainer{
+    width: 100%;
+  text-align: center;
 }
