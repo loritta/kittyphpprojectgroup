@@ -9,13 +9,13 @@ and open the template in the editor.
 */
 
 .registrationFrame{
-    margin:100px;
+    margin:50px;
     background: #fff !important;
     padding: 20px;
     border-radius: 5%;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: auto;
 }
 
 .formFrame{

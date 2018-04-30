@@ -37,14 +37,7 @@ require_once 'includes/function.php';
 
                 We are located in Canada, Montreal. We may ship your kitten to your door in another province or country.
             </div>
-            <div style="position: absolute; top: 40px; right: 20px; ">
-                <?php
-                if (isset($_SESSION['username'])) {
-                    echo "Hi, " . ucfirst($_SESSION['username']) . "!";
-                }
-                ?>
-
-            </div>
+            
             <nav>
                 <div id="myNav" class="overlay">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -128,6 +121,14 @@ if (isset($_SESSION['username'])) {
                  </a>-->
 
             </nav>
+            <div class="username">
+                <?php
+                if (isset($_SESSION['username'])) {
+                    echo "<p class='username'> Hi, welcome " . ucfirst($_SESSION['username']) . "!</p>";
+                }
+                ?>
+
+            </div>
         </header>
         <div id="home">
 <?php loadContent('content', 'home'); ?>

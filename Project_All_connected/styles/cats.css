@@ -74,17 +74,16 @@ section:nth-of-type(6) {
   /*background: rgba(0,0,0,0.5);*/
   color: #666666;
   width: 80vw;
-  height: 100vh;
   margin-top: 1vh;
   margin: 10%;
   margin-left: 0;
   font-size: 14px;
   height: auto;
 }
-.insideWhite p{
+.breeds p, .insideWhite p{
   text-align: justify;
 }
-.insideWhite h1, .notMoving h1{
+.breeds h1, insideWhite h1, .notMoving h1{
   text-transform: uppercase;
   letter-spacing: 0.8px;
   font-weight:100;
@@ -93,7 +92,7 @@ section:nth-of-type(6) {
   margin: 2%;
   padding: 0;
 }
-.insideWhite h2, .notMoving h2{
+.breeds h2, insideWhite h2, .notMoving h2{
   text-align: left;
   padding-right: 10px;
   font-weight:bolder;
@@ -158,39 +157,7 @@ section:nth-of-type(6) {
 
   position: relative;
 }
-.about1{
-  display: inline-block;
-  margin-left: 1%;
-  height: 100vh;
-  width: auto;
-  padding:20px;
 
-  /*border-color: rgb(255,182,121);
-  border-style: ridge;*/
-
-  float: left;
-}
-.about1 h2:hover{
-  color: #dc143c;
-}
-.about3 h2:hover{
-  color: #dc143c;
-}
-.about3{
-  display: block;
-  margin-left: 20%;
-  height: auto;
-  width: auto;
-
-
-  /*border-color: rgb(255,182,121);
-  border-style: ridge;*/
-}
-.about3 h2{
-  margin-left: 0;
-  float:left;
-}
-/*end sections for the home page*/
 
 /*Arrows for scroll down*/
 .arrows {
@@ -331,3 +298,83 @@ section:nth-of-type(6) {
   75%{transform: translateY(-18px);}
   100%{transform: translateY(0px);}
 }
+
+/*breeds page*/
+.breeds {
+  /*background: rgba(0,0,0,0.5);*/
+
+  color: #666666;
+  width: 80vw;
+  margin: 7vh;
+  margin-left: 0;
+  font-size: 14px;
+  height: auto;
+}
+.about1{
+  display: inline-block;
+  margin-top: 7vh;
+  margin-left: 7vh;
+  height: 90vh;
+  width: auto;
+  padding:20px;
+
+  /*border-color: rgb(255,182,121);
+  border-style: ridge;*/
+
+  float: left;
+}
+
+.about1 h2:hover{
+  color: #dc143c;
+}
+.about3 h2:hover{
+  color: #dc143c;
+}
+.about3{
+  display: block;
+  margin-left: 46vh;
+  height: auto;
+  width: auto;
+
+
+  /*border-color: rgb(255,182,121);
+  border-style: ridge;*/
+}
+.about3 h2{
+  margin-left: 0;
+  float:left;
+}
+.username{
+    
+    position:fixed;
+}
+.username p{
+    color:#48535d;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight:100;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    font-size: 1.9rem;
+    margin: 2%;
+    padding: 0;
+}
+
+.hrBreeds{
+    margin:auto;
+}
+/*end sections for the home page*/
+@media screen and (max-height: 450px) and (max-width: 700px) {
+    about3{
+        margin:0;
+        display: block;
+    }
+    .navTop{
+        word-break: break-all;
+        text-align: justify
+    }
+    
+    }
+    
+
+
+

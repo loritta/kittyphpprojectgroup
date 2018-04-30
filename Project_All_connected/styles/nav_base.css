@@ -11,6 +11,7 @@ nav{
     padding-top:5px;
     font-family: 'Anton', sans-serif;
 }
+
 .navFont{
     margin-top: 30px;
     margin: 7px;
@@ -48,14 +49,14 @@ nav{
 
 }
 .example-left {
-    white-space: nowrap;
+    white-space: normal;
     position: absolute;
     text-transform: uppercase;
 }
 
 .example-left {
     -webkit-animation: mymove 8s linear infinite; /* Safari 4.0 - 8.0 */
-    white-space: nowrap;
+    white-space: normal;
     animation: mymove 8s linear infinite alternate;
 }
 /* Safari 4.0 - 8.0 */
