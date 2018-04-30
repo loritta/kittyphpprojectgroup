@@ -44,47 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $imgPath = $GLOBALS['target_file'];
     $gender = $_POST['gender'];
     $descr = filter_var($_POST['description'], FILTER_SANITIZE_STRING);
+    $delCat = isset($_POST['checkb']);
 
-//    $uName = filter_var(($_POST['username']), FILTER_SANITIZE_STRING);
-//
-//    $addr = filter_var(($_POST['address']), FILTER_SANITIZE_STRING);
-//
-//    $city = filter_var(($_POST['city']), FILTER_SANITIZE_STRING);
-//    if (!preg_match("/^[a-zA-Z -]*$/", $city)) {
-//        $cityErr = "Only letters, white space and dash allowed";
-//    }
-//    $province = filter_var(($_POST['province']), FILTER_SANITIZE_STRING);
-//    if (!preg_match("/^[a-zA-Z -]*$/", $province)) {
-//        $prErr = "Only letters, white space and dash allowed";
-//    }
-//    $country = filter_var(($_POST['country']), FILTER_SANITIZE_STRING);
-//
-//    $pCode = filter_var(($_POST['pCode']), FILTER_SANITIZE_STRING);
-//
-//    $phone = filter_var(($_POST['phone']), FILTER_SANITIZE_STRING);
-//    if (!preg_match("/^[0-9 -+]*$/", $phone)) {
-//        $phErr = "Only numbers, white space, plus sign and dash allowed";
-//    }
-//
-//    $passW = $_POST['regpwd'];
-//    $confPass = $_POST['confPassword'];
-//    $email = filter_var(($_POST['email']), FILTER_SANITIZE_STRING);
-//
-//
-//    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-//        $emailErr = "Invalid email format";
-//    }
-//
-//
-//    $isBr = isset($_POST['checkb']);
-//    if ($_POST['regpwd'] != $_POST['confPassword']) {
-//
-//        $passErr = "Confirmation password doesn't match password!";
-//    } else if ($nameErr != "") {
-//        ;
-//    } else if ($emailErr != "") {
-//        ;
-//    } else {
     try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username1, $password1);
         // set the PDO error mode to exception
@@ -122,52 +83,62 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $stmt->execute();
             }
         } else {
-            $sql = "UPDATE cats SET name='" . $name . "', dob='" . $dob . "', vaccineA='" . $vaccineA . "', vaccineB='" . $vaccineB . "',"
-                    . "deworming='" . $deworm . "',availabilityDate='" . $avD . "',  adoptionDate='" . $adD . "',  gender='" . $gender . "',  "
-                    . "description='" . $descr . " '  WHERE id=" . $catId . ";";
+            if (!$delCat) {
+                $sql = "UPDATE cats SET name='" . $name . "', dob='" . $dob . "', vaccineA='" . $vaccineA . "', vaccineB='" . $vaccineB . "',"
+                        . "deworming='" . $deworm . "',availabilityDate='" . $avD . "',  adoptionDate='" . $adD . "',  gender='" . $gender . "',  "
+                        . "description='" . $descr . " '  WHERE id=" . $catId . ";";
 
-            // Prepare statement
-            $stmt = $conn->prepare($sql);
+                // Prepare statement
+                $stmt = $conn->prepare($sql);
 
-            // execute the query
-            $stmt->execute();
-
-            // echo a message to say the UPDATE succeeded
-            ?><script>
-                var numbRec = <?php echo json_encode($stmt->rowCount()); ?>;
-                alert(numbRec + " record(s) UPDATED successfully");</script><?php
-            if ($imgPath != "" && $imgPath != "images/") {
-
-                
-                
-                
-              $stmt = $conn->prepare("SELECT * FROM catsimages WHERE catId='" . $catId . "'");
-               $stmt->execute();
-                $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
-                ?><script>
-               
-                alert(<?php echo gettype($result); echo $catId;?> );</script><?php
-                if ($result>0) {
-
-
- ?><script>
-               
-                alert(<?php echo $imgPath; ?> );</script><?php
-                    $stmt = $conn->prepare("UPDATE  catsimages SET image=" . $imgPath . "WHERE catId=" . $catId . ";");
-
-
-                    // Prepare statement
-                    $stmt = $conn->prepare($sql);
-
-                    // execute the query
-                    $stmt->execute();
-                } else {
-                    $stmt = $conn->prepare("INSERT INTO catsimages (catId, image)
-    VALUES ( :catId, :image)");
-                $stmt->bindParam(':catId', $catId);
-                $stmt->bindParam(':image', $imgPath);
+                // execute the query
                 $stmt->execute();
+
+                // echo a message to say the UPDATE succeeded
+                ?><script>
+                                    var numbRec = <?php echo json_encode($stmt->rowCount()); ?>;
+                                    alert(numbRec + " record(s) UPDATED successfully");</script><?php
+                if ($imgPath != "" && $imgPath != "images/") {
+
+
+
+
+                    $stmt = $conn->prepare("SELECT * FROM catsimages WHERE catId='" . $catId . "'");
+                    $stmt->execute();
+                    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                    ?><script>
+
+                                            alert(<?php
+                    echo gettype($result);
+                    echo $catId;
+                    ?>);</script><?php
+                        if ($result > 0) {
+                            ?><script>
+
+                                                        alert(<?php echo $imgPath; ?>);</script><?php
+                        $stmt = $conn->prepare("UPDATE  catsimages SET image=" . $imgPath . "WHERE catId=" . $catId . ";");
+
+
+                        // Prepare statement
+                        $stmt = $conn->prepare($sql);
+
+                        // execute the query
+                        $stmt->execute();
+                    } else {
+                        $stmt = $conn->prepare("INSERT INTO catsimages (catId, image)
+    VALUES ( :catId, :image)");
+                        $stmt->bindParam(':catId', $catId);
+                        $stmt->bindParam(':image', $imgPath);
+                        $stmt->execute();
+                    }
                 }
+            } else {
+                $sql = "DELETE FROM cats WHERE id=" . $catId;
+
+                // use exec() because no results are returned
+                $conn->exec($sql);
+                ?><script>
+                                    alert("Record deleted successfully");</script><?php
             }
         }
     } catch (PDOException $e) {
@@ -200,12 +171,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                         <label class="formLabel" for="checkb" >Vaccine A*:</label>
                         <input type="checkbox" id="checkb"  name="checkb" <?php
-if (isset($_POST['checkb'])) {
-    if ($_POST['checkb']) {
-        echo "checked='checked'";
-    }
-}
-?>><br/>
+                        if (isset($_POST['checkb'])) {
+                            if ($_POST['checkb']) {
+                                echo "checked='checked'";
+                            }
+                        }
+                        ?>><br/>
                         <label class="formLabel" for="checkb2" >Vaccine B*:</label>
                         <input type="checkbox" id="checkb2"  name="checkb2" <?php
                         if (isset($_POST['checkb2'])) {
@@ -224,10 +195,10 @@ if (isset($_POST['checkb'])) {
                         ?>><br/>
 
                         <label class="formLabel" for="avDate" >Availability Date:</label><br/>
-                        <input class="formLabel" type="date" name="avDate" id="avDate"    value="<?php echo $GLOBALS['name']; ?>"><br/>
+                        <input class="formLabel" type="date" name="avDate" id="avDate"   ><br/>
 
                         <label class="formLabel" for="adDate" >Adoption Date:</label><br/>
-                        <input class="formLabel" type="date" name="adDate" id="adDate"    value="<?php echo $name; ?>"><br/>
+                        <input class="formLabel" type="date" name="adDate" id="adDate"   ><br/>
 
                         <label for="fileupload"> Select an image to upload</label><br/>
                         <input type="file" name="fileupload" id="fileupload" accept="image/*" onchange="loadFile(event)"><br/>
@@ -238,12 +209,15 @@ if (isset($_POST['checkb'])) {
                                 output.src = URL.createObjectURL(event.target.files[0]);
                             };
                         </script>
-                        <label for='gender'>Gender</label><br>
+                        <label for='gender'>Gender*:</label><br>
                         <input type="radio" name="gender" value="male" checked> Male<br>
                         <input type="radio" name="gender" value="female"> Female<br>
 
-                        <label for='description'>Description</label><br>
+                        <label for='description'>Description:</label><br>
                         <textarea rows="5" cols="40" name="description" id="description"></textarea><br>
+
+                        <label class="formLabel" for="checkb" >Delete the cat?</label>
+                        <input type="checkbox" id="checkb"  name="checkb" ><br/>
 
                         <button type="submit" id="submit" name="submit">Save</button>
                     </form><br/>
@@ -253,34 +227,34 @@ if (isset($_POST['checkb'])) {
             <td style="position: absolute; right: 15%; top: 15%">
                 <div >
                     <h1>Edit cat data</h1>
-<?php
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-$conn = new mysqli($servername, $username1, $password1, $dbname);
+                    <?php
+                    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+                    $conn = new mysqli($servername, $username1, $password1, $dbname);
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+                    if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                    }
 
-$sql = "SELECT cats.id, name, dob, vaccineA, vaccineB, deworming, availabilityDate, "
-        . "adoptionDate, gender, description, image FROM cats LEFT JOIN catsimages ON cats.id=catsimages.catId";
-$result = $conn->query($sql);
+                    $sql = "SELECT cats.id, name, dob, vaccineA, vaccineB, deworming, availabilityDate, "
+                            . "adoptionDate, gender, description, image FROM cats LEFT JOIN catsimages ON cats.id=catsimages.catId";
+                    $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-    echo '<select id="list" onchange="getSelectValue();">';
-    // output data of each row
-    while ($row = $result->fetch_assoc()) {
+                    if ($result->num_rows > 0) {
+                        echo '<select id="list" onchange="getSelectValue();">';
+                        // output data of each row
+                        while ($row = $result->fetch_assoc()) {
 //                            echo "<p   id='" . $row['name'] . "' onclick='myFunction(this.id);' >"."<span style='visibility:hidden'>". "#" . $row['id'] . " Name: " . $row['name'] ."DOB: " . $row['dob'] .
 //                            "Vaccine A: " . $row['vaccineA'] . "Vaccine B: " . $row['vaccineB'] . "Deworming: " . $row['deworming'] .
 //                            "Availability Date: " . $row['availabilityDate'] . "Adoption Date: " . $row['adoptionDate'] .
 //                            "Gender: " . $row['gender'] . "Description: " . $row['description'] . '</span>' . "</p>";
-        echo "<option value='" . "#" . $row['id'] . " Name: " . $row['name'] . "DOB: " . $row['dob'] .
-        "Vaccine A: " . $row['vaccineA'] . "Vaccine B: " . $row['vaccineB'] . "Deworming: " . $row['deworming'] .
-        "Availability Date: " . $row['availabilityDate'] . "Adoption Date: " . $row['adoptionDate'] .
-        "Gender: " . $row['gender'] . "Description: " . $row['description'] . "Image Path: " . $row['image'] . "label=''" . "' >" . $row['id'] . "." . $row['name'] . "</option>";
-    }
-    echo "</select>";
-} else {
-    ?><script>alert("0 cats")</script><?php
+                            echo "<option value='" . "#" . $row['id'] . " Name: " . $row['name'] . "DOB: " . $row['dob'] .
+                            "Vaccine A: " . $row['vaccineA'] . "Vaccine B: " . $row['vaccineB'] . "Deworming: " . $row['deworming'] .
+                            "Availability Date: " . $row['availabilityDate'] . "Adoption Date: " . $row['adoptionDate'] .
+                            "Gender: " . $row['gender'] . "Description: " . $row['description'] . "Image Path: " . $row['image'] . "label=''" . "' >" . $row['id'] . "." . $row['name'] . "</option>";
+                        }
+                        echo "</select>";
+                    } else {
+                        ?><script>alert("0 cats")</script><?php
                     }
 
 
@@ -288,30 +262,6 @@ if ($result->num_rows > 0) {
                     ?>
                     <script>
 
-//                        function myFunction(clicked) {
-//                            var x = document.getElementById("" + clicked + "").innerHTML;
-//                            // alert(clicked);
-//                            document.getElementById("name").value = x.substring(x.lastIndexOf("Name: ") + 6, x.lastIndexOf("<span"));
-//                            document.getElementById("dob").value = x.substring(x.lastIndexOf("DOB: ") + 5, x.lastIndexOf("Vaccine A: "));
-//                            //document.getElementById("checkb").value=x.substring(x.lastIndexOf("A: ")+3,x.lastIndexOf("Vaccine B: "));
-//
-//                            document.getElementById("avDate").value = x.substring(x.lastIndexOf("Availability Date: ") + 19, x.lastIndexOf("Adoption"));
-//                            document.getElementById("adDate").value = x.substring(x.lastIndexOf("Adoption Date: ") + 15, x.lastIndexOf("Gender"));
-//
-//                            var temp = x.substring(x.lastIndexOf("A: ") + 3, x.lastIndexOf("Vaccine B: "));
-//                            var temp2 = (temp == 0) ? false : true;
-//                            document.getElementById("checkb").checked = temp2;
-//
-//                            var temp3 = x.substring(x.lastIndexOf("B: ") + 3, x.lastIndexOf("Deworming:"));
-//                            var temp4 = (temp3 == 0) ? false : true;
-//                            document.getElementById("checkb2").checked = temp4;
-//
-//                            var temp5 = x.substring(x.lastIndexOf("Deworming: ") + 11, x.lastIndexOf("Availability"));
-//                            var temp6 = (temp5 == 0) ? false : true;
-//                            document.getElementById("checkb3").checked = temp6;
-//
-//
-//                        }
                         function getSelectValue() {
 
                             var x = document.getElementById("list").value;
@@ -360,48 +310,16 @@ if ($result->num_rows > 0) {
 
 </div>
 
-<?php
-//$content = "<script> document.write(x) </script>";
-//       echo $content;
-//        $conn = new mysqli($servername, $username1, $password1, $dbname);
-//// Check connection
-//        if ($conn->connect_error) {
-//            die("Connection failed: " . $conn->connect_error);
-//        }
-//
-//          $sql = "SELECT * FROM cats WHERE name="."'".$catName."'";
-//        $result = $conn->query($sql);
-//
-//        if ($result->num_rows > 0) {
-//
-//            // output data of each row
-//            while ($row = $result->fetch_assoc()) {
-//                $GLOBALS['id'] = $row['name'];
-//                $GLOBALS['orderId'] = $row['orderId'];
-//                $GLOBALS['name'] = $row['name'];
-//                $GLOBALS['dob'] = $row['dob'];
-//                $GLOBALS['vaccineA']= $row['vaccineA'];
-//                $GLOBALS['vaccineB']= $row['vaccineB'];
-//                $GLOBALS['deworming']= $row['deworming'];
-//                $GLOBALS['availabilityDate']= $row['availabilityDate'];
-//                $GLOBALS['adoptionDate']= $row['adoptionDate'];
-//                $GLOBALS['gender']= $row['gender'];
-//                $GLOBALS['description']= $row['description'];
-//            }
-//            
-//        }
-//        $conn->close();
-//        ;
-?>
+
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-    $target_dir = "images/";
-    $target_file = $target_dir . basename($_FILES["fileupload"]["name"]);
-    $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($GLOBALS['target_file'], PATHINFO_EXTENSION));
-// Check if image file is a actual image or fake image
     if (isset($_POST["fileupload"])) {
+        $target_dir = "images/";
+        $target_file = $target_dir . basename($_FILES["fileupload"]["name"]);
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($GLOBALS['target_file'], PATHINFO_EXTENSION));
+// Check if image file is a actual image or fake image
+
         $check = getimagesize($_FILES["fileupload"]["tmp_name"]);
         if ($check !== false) {
             echo "File is an image - " . $check["mime"] . ".";
@@ -410,7 +328,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             ?><script>alert("File is not an image.");</script><?php
             $uploadOk = 0;
         }
-    }
+
 // Check if file already exists
         if (file_exists($target_file)) {
             ?><script>alert("Sorry, file already exists.");</script><?php
@@ -437,7 +355,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 ?><script>alert("Sorry, there was an error uploading your file.");</script><?php
             }
         }
-    
+    }
 }
 ?>
 
