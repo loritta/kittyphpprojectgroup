@@ -209,11 +209,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 output.src = URL.createObjectURL(event.target.files[0]);
                             };
                         </script>
-                        <label for='gender'>Gender</label><br>
+                        <label for='gender'>Gender*:</label><br>
                         <input type="radio" name="gender" value="male" checked> Male<br>
                         <input type="radio" name="gender" value="female"> Female<br>
 
-                        <label for='description'>Description</label><br>
+                        <label for='description'>Description:</label><br>
                         <textarea rows="5" cols="40" name="description" id="description"></textarea><br>
 
                         <label class="formLabel" for="checkb" >Delete the cat?</label>
