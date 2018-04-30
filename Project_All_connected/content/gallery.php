@@ -28,12 +28,13 @@
                     $(".btnAdopt").click(function () {
                         $(".modal").modal('hide');
                         $("#adoptModal").modal('show');
+
                     });
 
                     // using ajax to send the message to the server without reloading or redirecting page
                     $('#btnAdoptRequest').click(function () {
 
-                        var userName = $("#userName").val();
+                        var user = $("#user").val();
                         var message = $("#message").val();
 
 
@@ -41,7 +42,7 @@
                             url: 'adoptInfoRequest.php',
                             type: 'POST',
                             data: {
-                                userName: userName,
+                                user: user,
                                 message: message
                             },
                             success: function (msg) {
@@ -52,7 +53,37 @@
                             }
                         });
                     });
+
+
+                    $('#btnAddCart').click(function () {
+
+                        $.ajax({
+                            url: 'addNewOrder.php',
+                            type: 'POST',
+                            data: {
+                                userName: userName,
+                                catId: selectedCat
+                            },
+                            success: function (msg) {
+                                $("#adoptModal").modal('hide');
+
+                                alert("Your order has been sent!");
+
+                            }
+                        });
+                        
+                    });
+
                 });
+
+
+                var userName;
+                var selectedCat;
+
+                function selectCat(id) {
+                    selectedCat = id;
+                }
+
             </script>
 
 
@@ -63,8 +94,8 @@
 
 
 <?php
-
 // php scripts below
+
 function getConnection() {
     $servername = "den1.mysql2.gear.host";
     $username = "phpcats";
@@ -104,7 +135,7 @@ if ($result->num_rows > 0) {
         $deworming = ((bool) $row['deworming']) ? 'yes' : 'no';
 
         ($row['gender'] === null) ? $gender = 'Unknown' : $gender = $row['gender'];
-        ($row['description'] === null) ? $description = 'No description' : $description = row['description'];
+        ($row['description'] === null) ? $description = 'No description' : $description = $row['description'];
 
 
         $imageLink = getImageLink($id);
@@ -114,7 +145,7 @@ if ($result->num_rows > 0) {
         }
 
         addThumbnail($name, $imageLink);
-        createModal($name, $dob, $gender, $vaccineA, $vaccineB, $deworming, $availDate, $description);
+        createModal($id, $name, $dob, $gender, $vaccineA, $vaccineB, $deworming, $availDate, $description);
     }
     createAdoptModal(); // the modal for when you click "adopt", only 1 is needed
 } else {
@@ -172,7 +203,7 @@ function runGallery() {
             </script>";
 }
 
-function createModal($name, $dob, $gender, $vaccineA, $vaccineB, $deworming, $availDate, $description) {
+function createModal($id, $name, $dob, $gender, $vaccineA, $vaccineB, $deworming, $availDate, $description) {
     echo "
     <div class='modal fade' id='" . $name . "ModalCenter' tabindex='-1' role='dialog' aria-labelledby='" . $name . "ModalCenterTitle' 
         aria-hidden='true'>
@@ -195,15 +226,22 @@ function createModal($name, $dob, $gender, $vaccineA, $vaccineB, $deworming, $av
                 </div>
                 <div class='modal-footer'>
                     <button type='button' class='btn btnAll' data-dismiss='modal'>Close</button>
-                    <button type='button' class='btn btnAll btnAdopt'>Adopt " . $name . "!</button>
+                    <button type='button' class='btn btnAll btnAdopt' onclick=\"selectCat(" . $id . ")\">Adopt " . $name . "!</button>
                 </div>
             </div>
         </div>
     </div>";
+
 }
 
 function createAdoptModal() {
-    echo "
+
+    if (isset($_SESSION['username']) && $_SESSION['username'] != null) {
+        // if user is logged in, save the username to a javascript variable to be used later if needed (when adopting)
+        echo "<script>userName = '" . $_SESSION['username'] . "';</script>"; 
+        
+        // create the modal for a logged in user
+        echo "
         <div class='modal fade' id='adoptModal' tabindex='-1' role='dialog' aria-labelledby='adoptModalLabel' aria-hidden='true'>
         
             <div class='modal-dialog modal-dialog-centered' role='document'>
@@ -211,7 +249,7 @@ function createAdoptModal() {
                 <div class='modal-content'>
                 
                   <div class='modal-header'>
-                    <h4 class='modal-title' id='exampleModalLabel'>Ready to adopt?</h5>
+                    <h4 class='modal-title' id='exampleModalLabel'>Ready to adopt?</h4>
                     <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
                       <span aria-hidden='true'>&times;</span>
                     </button>
@@ -219,25 +257,61 @@ function createAdoptModal() {
                   
                   <div class='modal-body'>
                     <button type='button' class='btn btnAll btnSuccess btnCall'><span class='glyphicon glyphicon-earphone'</span>
-                        Call us at 1-800-1212-0155</button>
-                    <h5>Or send us a direct message, we'll get back to you asap!</h5>
+                        Call us at 1-800-1212-0155 if you need any information</button>
+                    <h5>You can also send us a direct message, we'll get back to you asap!</h5>
                     <form>
                       <div class='form-group'>
                         <label for='userName' class='col-form-label'>Your name:</label>
-                        <input type='text' class='form-control' id='userName' name='userName'>
+                        <input type='text' class='form-control' id='user' name='userName'>
                       </div>
                       <div class='form-group'>
                         <label for='message-text' class='col-form-label'>Your Message: (make sure you leave us a way to contact you!)</label>
                         <textarea class='form-control' id='message'></textarea>
                       </div>
+                      <button type='button' class='btn btn-primary' id='btnAdoptRequest'>Send message</button>
+
                     </form>
+                    
+                    <h5>Got all the info you need? Click the button below to purchase your new companion</h5>
+
                   </div>
                   
+
                   <div class='modal-footer'>
-                    <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
-                    <button type='button' class='btn btn-primary' id='btnAdoptRequest'>Send message</button>
+                    <button type='button' class='btn btn-secondary' data-dismiss='modal'>Cancel</button>
+                    <button type='button' class='btn btn-primary' id='btnAddCart'>Adopt Now!</button>
                   </div>                 
             </div>
           </div>
         </div>";
+        // create the modal for user not logged in
+    } else {
+        echo "
+        <div class='modal fade' id='adoptModal' tabindex='-1' role='dialog' aria-labelledby='adoptModalLabel' aria-hidden='true'>
+        
+            <div class='modal-dialog modal-dialog-centered' role='document'>
+            
+                <div class='modal-content'>
+                
+                  <div class='modal-header'>
+                    <h4 class='modal-title' id='exampleModalLabel'>Login required</h4>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                      <span aria-hidden='true'>&times;</span>
+                    </button>
+                  </div>
+                  
+                  <div class='modal-body'>
+
+                    <h5>Please login or create an account to adopt!</h5>
+      
+                  </div>
+                  
+                  <div class='modal-footer'>
+                    <button type='button' class='btn btn-secondary' data-dismiss='modal'>Cancel</button>
+                    <button type='button' class='btn btn-primary' id='btnLogin' onclick=\"location.href='cats.php?content=login';\">Login</button>
+                  </div>                 
+            </div>
+          </div>
+        </div>";
+    }
 }
