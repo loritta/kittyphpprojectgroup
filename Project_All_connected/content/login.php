@@ -27,9 +27,9 @@
             <div class="box">
                 <label  for="username" >User name*:</label><br/>
                 <input class="formLabel" type="text" name="username" id="username" required="required"  maxlength="30"><br/>
-                <div class='para'>
+                <div class='para' style="padding-left: 25%">
 
-                    <label for='regpwd'>Password*:</label> <br />
+                    <label for='regpwd' style="padding-right:  75%">Password*:</label> <br />
                     <div class='pwdwidgetdiv' id='thepwddiv'></div>
                     <script type="text/javascript">
                         var pwdwidget = new PasswordWidget('thepwddiv', 'regpwd');
