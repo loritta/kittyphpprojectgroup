@@ -14,54 +14,54 @@ and open the template in the editor.
 }
 .aboutMain{
     height: auto;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
 }
 .aboutPhoto {
     -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
 
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     height: 120vh;
-  text-transform: uppercase;
-  font-size: 3vw;
-  background-image: url(../images/_DSC3457.jpg);
-color: #fff;
-  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    text-transform: uppercase;
+    font-size: 3vw;
+    background-image: url(../images/_DSC3457.jpg);
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
 }
 
 
@@ -75,7 +75,7 @@ color: #fff;
     padding: 0.5%;
 }
 .aboutOdd p, .aboutEven p{
-     margin:20px;
+    margin:20px;
     padding: 10px;
 }
 .reference{
@@ -84,74 +84,74 @@ color: #fff;
 }
 
 .aboutText h1{
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  font-weight:100;
-  text-shadow: 0 0 5px rgba(0,0,0,0.4);
-  font-size: 1.9rem;
-  margin: 2%;
-  padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight:100;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    font-size: 1.9rem;
+    margin: 2%;
+    padding: 0;
 }
 .aboutText h2{
     text-align: left;
-  padding-right: 10px;
-  font-weight:50;
-  text-shadow: 0 0 5px rgba(0,0,0,0.4);
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-top: 2px;
-  width: 120px;
+    padding-right: 10px;
+    font-weight:50;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 2px;
+    width: 120px;
 }
 .resourcesPhoto{
     -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
 
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     height: 120vh;
-  text-transform: uppercase;
-  font-size: 3vw;
-  background-image: url(../images/_DSC3999.jpg);
-color: #fff;
-  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    text-transform: uppercase;
+    font-size: 3vw;
+    background-image: url(../images/_DSC3999.jpg);
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
 }
 .resourcesMain{
     height: 25vh;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
 }
 .resCenter{
     padding:1em;
@@ -167,15 +167,15 @@ color: #fff;
     transition: all 0.2s ease-in-out;
 }
 .resCenter p{
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  font-weight:100;
-  text-shadow: 0 0 5px rgba(0,0,0,0.4);
-  font-size: 1.9rem;
-  margin: 2%;
-  padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight:100;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    font-size: 1.9rem;
+    margin: 2%;
+    padding: 0;
 }
 .resContainer{
     width: 100%;
-  text-align: center;
+    text-align: center;
 }

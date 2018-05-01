@@ -221,7 +221,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <label class="formLabel" for="checkb" >Delete the cat?</label>
                         <input type="checkbox" id="checkb"  name="checkb" ><br/>
 
-                        <button type="submit" id="submit" name="submit">Save</button>
+                        <button type="submit" class="btn btnAll" id="submit" name="submit">Save</button>
                         </form><br/>
 
                     </div>

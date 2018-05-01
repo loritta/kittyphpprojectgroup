@@ -63,7 +63,7 @@
      }
 </script>
 
-<div class="aboutMain aboutEven">
+<div class="aboutMain ">
 
 
     <div class="formFrame notMoving">
@@ -76,26 +76,26 @@
               method="post" action="<?php echo($_SERVER['PHP_SELF']);?>" autocomplete="on" onsubmit="return validate();">
             <div class="box">
                 <label class="formLabel" for="name">Name*</label>
-                <input required type="text" minlength="2" id="name" name="name" class="formLabel" maxlength="80" autofocus="autofocus" /></br>
+                <input required type="text" minlength="2" id="name" name="name" class="formLabel contact" maxlength="80" autofocus="autofocus" /></br>
                 
                 <label class="formLabel" for="email">E-mail*</label>
-                <input required type="email" id="email" name="email" class="formLabel" placeholder=" id@domain.com" /><br />
+                <input required type="email" id="email" name="email" class="formLabel contact" placeholder=" id@domain.com" /><br />
 
                 <label  class="formLabel" for="address">Address</label>
-                <input type="address" id="address" name="address" class="formLabel"  /></br>
+                <input type="address" id="address" name="address" class="formLabel contact"  /></br>
                 
                 <label class="formLabel" for="phone">Phone number</label>
-                <input type="phone" id="phone" name="phone" class="formLabel"/></br>
+                <input type="phone" id="phone" name="phone" class="formLabel contact"/></br>
                 
                 <input type="text" id="website" name="website" class="hidden"/>
 
             </div>
             <div class="box">
                 <label class="formLabel" for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" class="formLabel"/></br>
+                <input type="text" id="subject" name="subject" class="formLabel contact"/></br>
                 
                 <label class="formLabel" for="text">Your message*</label>
-                <textarea required id="text" minlength="10" name="text" class="formLabel" rows="5" cols="" required="required"></textarea></br>
+                <textarea required id="text" minlength="10" name="text" class="formLabel contact" rows="5" cols="" required="required"></textarea></br>
                 
                 <small class="emailHelp" class="">We'll never share your personal information with anyone else.</small><br />
 

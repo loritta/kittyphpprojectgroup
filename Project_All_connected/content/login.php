@@ -26,7 +26,7 @@
         <form name="login" id="login" method="post" action="cats.php?content=login" autocomplete="off">  
             <div class="box">
                 <label  for="username" >User name*:</label><br/>
-                <input class="formLabel" type="text" name="username" id="username" required="required"  maxlength="30"><br/>
+                <input class="formLabel login" type="text" name="username" id="username" required="required"  maxlength="30"><br/>
                 <div class='para' style="padding-left: 25%">
 
                     <label for='regpwd' style="padding-right:  75%">Password*:</label> <br />
@@ -38,7 +38,7 @@
                         pwdwidget.MakePWDWidget();
                     </script>
                     <noscript>
-                    <div><input class="formLabel" type='password' id='regpwd' name='regpwd' /></div>		
+                    <div><input class="formLabel login" type='password' id='regpwd' name='regpwd' /></div>		
                     </noscript>
                 </div><br/>
             </div>

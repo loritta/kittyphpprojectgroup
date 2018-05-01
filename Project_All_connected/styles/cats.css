@@ -129,7 +129,7 @@ section:nth-of-type(5) {
     width: 80%;
     margin: 0.25em auto 0 auto;
 
-    color: rgb(244, 255, 219);
+    color: rgb(63, 64, 69);
     outline: none;
 
     font-size: 2em;
@@ -160,7 +160,7 @@ section:nth-of-type(5) {
     width: 80%;
     margin: 0.25em auto 0 auto;
 
-    color: #d4d2d5;
+    color: #fff;
     outline: none;
 
     font-size: 3em;
@@ -284,6 +284,7 @@ section:nth-of-type(5) {
 }
 .btnAll{
     background-color: #E2C044;
+    clear:both;
 }
 .tween-looper
 {
@@ -328,7 +329,7 @@ section:nth-of-type(5) {
     display: inline-block;
     margin-top: 7vh;
     margin-left: 7vh;
-    height: 90vh;
+    height: 60vh;
     width: auto;
     padding:20px;
 
@@ -359,8 +360,11 @@ section:nth-of-type(5) {
     float:left;
 }
 .username{
+    clear:both;
     z-index: 5;
     position:fixed;
+    top:3vh;
+    left:1vh;
 }
 .username p{
     color:#48535d;
@@ -369,7 +373,7 @@ section:nth-of-type(5) {
     font-weight:100;
     text-shadow: 0 0 5px rgba(0,0,0,0.4);
     font-size: 1.9rem;
-    margin: 2%;
+    margin: 0;
     padding: 0;
 }
 
@@ -414,6 +418,13 @@ section:nth-of-type(5) {
     background-attachment: fixed;
     background: #fff;
 }
+
+input.contact, .contact textarea, input.registration{
+    width:200px;
+    float:right;
+    display:block;
+}
+
 
 
 

@@ -2,19 +2,23 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/Users/larisasabalin/Desktop/ProjectsLarisa/kittyphpprojectgroup/Project_All_connected/content/gallery.php</file>
-            <file>file:/Users/larisasabalin/Desktop/ProjectsLarisa/kittyphpprojectgroup/Project_All_connected/content/about.php</file>
-            <file>file:/Users/larisasabalin/Desktop/ProjectsLarisa/kittyphpprojectgroup/Project_All_connected/content/logout.php</file>
-            <file>file:/Users/larisasabalin/Desktop/ProjectsLarisa/kittyphpprojectgroup/Project_All_connected/content/login.php</file>
-            <file>file:/Users/larisasabalin/Desktop/ProjectsLarisa/kittyphpprojectgroup/Project_All_connected/content/breeds.php</file>
-            <file>file:/Users/larisasabalin/Desktop/ProjectsLarisa/kittyphpprojectgroup/Project_All_connected/styles/nav_base.css</file>
-            <file>file:/Users/larisasabalin/Desktop/ProjectsLarisa/kittyphpprojectgroup/Project_All_connected/catsAfterlogin.php</file>
-        </group>
         <group name="PHP Projects">
             <file>file:/C:/xampp/htdocs/kittyphpprojectgroup/Project_All_connected/content/gallery.php</file>
             <file>file:/C:/xampp/htdocs/kittyphpprojectgroup/Project_All_connected/styles/adopt.css</file>
             <file>file:/C:/xampp/htdocs/kittyphpprojectgroup/Project_All_connected/content/adopted.php</file>
+        </group>
+        <group>
+            <file>file:/C:/xampp/htdocs/Project_All_connected/styles/contact.css</file>
+            <file>file:/C:/xampp/htdocs/Project_All_connected/styles/about.css</file>
+            <file>file:/C:/xampp/htdocs/Project_All_connected/content/login.php</file>
+            <file>file:/C:/xampp/htdocs/Project_All_connected/styles/cats.css</file>
+            <file>file:/C:/xampp/htdocs/Project_All_connected/content/adopted.php</file>
+            <file>file:/C:/xampp/htdocs/Project_All_connected/content/signup.php</file>
+            <file>file:/C:/xampp/htdocs/Project_All_connected/addNewOrder.php</file>
+            <file>file:/C:/xampp/htdocs/Project_All_connected/content/gallery.php</file>
+            <file>file:/C:/xampp/htdocs/Project_All_connected/content/breeds.php</file>
+            <file>file:/C:/xampp/htdocs/Project_All_connected/content/contact.php</file>
+            <file>file:/C:/xampp/htdocs/Project_All_connected/content/addcats.php</file>
         </group>
     </open-files>
 </project-private>
