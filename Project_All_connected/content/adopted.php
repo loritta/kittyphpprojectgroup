@@ -14,10 +14,6 @@
 <link rel="stylesheet" type="text/css" href="styles/adopted.css"/>
 
 
-
-
-
-
 <div class="aboutEven notMoving">
     <h1 class="textCenter">Our parents</h1>
     <div id="" class="container gallery-container galleryMargin">

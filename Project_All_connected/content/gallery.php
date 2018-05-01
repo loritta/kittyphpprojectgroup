@@ -1,3 +1,11 @@
+<?php
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+?>
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -5,23 +13,18 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" type="text/css" href="styles/adopt.css"/>
+<link rel="stylesheet" type="text/css" href="styles/adopted.css"/>
 
 
-<div class="aboutEven aboutMain pageBanner">
+<div class="aboutEven notMoving">
     <h1 class="textCenter">Find your perfect companion</h1>
 </div>
 
-
-
+<div class="aboutOdd galleryBatch">
+<h2 class="textCenter">Our Featured Cats and Kittens</h2>
 <div id="container" class="container gallery-container">
-
-    <div class="mainHeader">
-        <h2>Our Featured Cats and Kittens</h2>
-    </div>
-
-    <div class="tz-gallery">
-        <div class="row row-eq-height adoptedSpace" id='row'>
+    <div class="tz-gallery galleryMargin">
+        <div class="row row-eq-height adoptedSpace galleryMargin" id='row'>
 
             <script>
                 $(document).ready(function () {
@@ -71,7 +74,7 @@
 
                             }
                         });
-                        
+
                     });
 
                 });
@@ -94,6 +97,7 @@
 
 
 <?php
+
 // php scripts below
 
 function getConnection() {
@@ -231,15 +235,14 @@ function createModal($id, $name, $dob, $gender, $vaccineA, $vaccineB, $deworming
             </div>
         </div>
     </div>";
-
 }
 
 function createAdoptModal() {
 
     if (isset($_SESSION['username']) && $_SESSION['username'] != null) {
         // if user is logged in, save the username to a javascript variable to be used later if needed (when adopting)
-        echo "<script>userName = '" . $_SESSION['username'] . "';</script>"; 
-        
+        echo "<script>userName = '" . $_SESSION['username'] . "';</script>";
+
         // create the modal for a logged in user
         echo "
         <div class='modal fade' id='adoptModal' tabindex='-1' role='dialog' aria-labelledby='adoptModalLabel' aria-hidden='true'>

@@ -133,6 +133,10 @@ if (isset($_SESSION['username'])) {
         <div id="home">
 <?php loadContent('content', 'home'); ?>
         </div>
+         <div class="footer">
+            
+            <small class="signature">Designed, developed, filmed and photographed by Chris, Dmitrii and Larisa 2018</small>
+        </div>
         <script>
             function openNav() {
                 document.getElementById("myNav").style.display = "block";

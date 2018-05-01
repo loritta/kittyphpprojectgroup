@@ -47,7 +47,4 @@
            
         </section>
 
-        <section>
-            
-            <small class="signature">Designed, developed, filmed and photographed by , Dmitrii and Larisa</small>
-        </section>
+       
