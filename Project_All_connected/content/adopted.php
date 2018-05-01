@@ -29,7 +29,7 @@
                 <div class="col-sm-6 col-md-6 galleryMargin">
 
                     <div class='thumbnail galleryMargin'>
-                        <a class="square" href="images/_DSC3974.jpg" data-caption="Image caption" class='lightbox'>
+                        <a class="square" href="images/_DSC3974.jpg" class='lightbox'>
                             <img src="images/_DSC3974.jpg" alt="Micy Photo">
 
                         </a>
@@ -175,7 +175,7 @@
                     <div class="col-sm-6 col-md-4">
 
                         <div class='thumbnail'>
-                            <a href="images/_DSC3457.jpg" data-caption="Image caption" caption='test' class='lightbox'>
+                            <a href="images/_DSC3457.jpg" class='lightbox'>
                                 <img src="images/_DSC3457.jpg" alt="First image">
                             </a>
                             <div class="caption">
@@ -216,7 +216,7 @@
     </div>
     <h2 class="textCenter">Second litter</h2>
     <div id="container" class="container gallery-container ">
-        <h1 class="textCenter">The bear</h1>
+        <h1 class="textCenter">Twin 1</h1>
         <div class="tz-gallery galleryMargin">
             <!--first row-->
             <div class="row row-eq-height adoptedSpace galleryMargin">
@@ -224,12 +224,12 @@
                 <div class="col-sm-6 col-md-4">
 
                     <div class='thumbnail'>
-                        <a href="images/_DSC3394.jpg" class='lightbox'>
-                            <img src="images/_DSC3394.jpg" alt="First image">
+                        <a href="images/_DSC3987.jpg" class='lightbox'>
+                            <img src="images/_DSC3987.jpg" alt="First image">
 
                         </a>
                         <div class="caption">
-                            <h3>"The bear"</h3>
+                            <h3>"Twin 1"</h3>
                             <!-- <button type="button" class="btn btn-primary">More Info</button> 
                             data-caption="Image caption"-->
 
@@ -240,39 +240,45 @@
 
                 <div class="col-sm-6 col-md-4">
                     <div class='thumbnail'>
-                        <a href="images/_DSC3442.jpg" class='lightbox'>
-                            <img src="images/_DSC3442.jpg" alt="Second image">
+                        <a href="images/_DSC3989.jpg" class='lightbox'>
+                            <img src="images/_DSC3989.jpg" alt="Second image">
                         </a>
                         <div class="caption">
-                            <h3>"The bear"</h3>
+                            <h3>"Twin 1"</h3>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-sm-6 col-md-4">
                     <div class='thumbnail'>
-                        <a href="images/_DSC3448.jpg" class='lightbox'>
-                            <img src="images/_DSC3448.jpg" alt="Third image">
+                        <a href="images/_DSC3991.jpg" class='lightbox'>
+                            <img src="images/_DSC3991.jpg" alt="Third image">
                         </a>
                         <div class="caption">
-                            <h3>"The bear"</h3>
+                            <h3>"Twin 1"</h3>
                         </div>
                     </div>
                 </div>
-            </div>                          
-            <!--end first row-->
+            </div> 
+        </div>
+    </div>
+    <!--end first row-->
 
-            <!--second row-->
-            <div class="row row-eq-height adoptedSpace">
+    <!--second row-->
+    <div id="container" class="container gallery-container ">
+        <h1 class="textCenter">Twin 2</h1>
+        <div class="tz-gallery galleryMargin">
+            <!--first row-->
+            <div class="row row-eq-height adoptedSpace galleryMargin">
 
                 <div class="col-sm-6 col-md-4">
 
                     <div class='thumbnail'>
-                        <a href="images/_DSC3452.jpg" class='lightbox'>
-                            <img src="images/_DSC3452.jpg" alt="First image">
+                        <a href="images/_DSC3993.jpg" class='lightbox'>
+                            <img src="images/_DSC3993.jpg" alt="First image">
                         </a>
                         <div class="caption">
-                            <h3>"The bear"</h3>
+                            <h3>"Twin 2"</h3>
                             <!-- <button type="button" class="btn btn-primary">More Info</button> 
                             data-caption="Image caption"-->
 
@@ -282,11 +288,11 @@
 
                 <div class="col-sm-6 col-md-4">
                     <div class='thumbnail'>
-                        <a href="images/_DSC3450.jpg" class='lightbox'>
-                            <img src="images/_DSC3450.jpg" alt="Second image">
+                        <a href="images/_DSC3972.jpg" class='lightbox'>
+                            <img src="images/_DSC3972.jpg" alt="Second image">
                         </a>
                         <div class="caption">
-                            <h3>"The bear"</h3>
+                            <h3>"Twin 2"</h3>
                             <p></p>
                         </div>
                     </div>
@@ -294,11 +300,11 @@
 
                 <div class="col-sm-6 col-md-4">
                     <div class='thumbnail'>
-                        <a href="images/_DSC3516.jpg" class='lightbox'>
-                            <img src="images/_DSC3516.jpg" alt="Third image">
+                        <a href="images/_DSC3987.jpg" class='lightbox'>
+                            <img src="images/_DSC3987.jpg" alt="Third image">
                         </a>
                         <div class="caption">
-                            <h3>"The bear"</h3>
+                            <h3>"Twin 1"</h3>
                             <p></p>
                         </div>
                     </div>
@@ -308,7 +314,7 @@
     </div>
     <!--end second row-->
     <div id="container" class="container gallery-container ">
-        <h1 class="textCenter">Shanya</h1>
+        <h1 class="textCenter">Fold Bear</h1>
         <div class="tz-gallery galleryMargin">
             <!--first row-->
             <div class="row row-eq-height adoptedSpace galleryMargin">
@@ -319,11 +325,11 @@
                     <div class="col-sm-6 col-md-4">
 
                         <div class='thumbnail'>
-                            <a href="images/_DSC3457.jpg" data-caption="Image caption" caption='test' class='lightbox'>
-                                <img src="images/_DSC3457.jpg" alt="First image">
+                            <a href="images/_DSC3958.jpg" class='lightbox'>
+                                <img src="images/_DSC3958.jpg" alt="First image">
                             </a>
                             <div class="caption">
-                                <h3>"Shanya"</h3>
+                                <h3>"Fold Bear"</h3>
                                 <!-- <button type="button" class="btn btn-primary">More Info</button> -->
 
                             </div>
@@ -332,11 +338,11 @@
 
                     <div class="col-sm-6 col-md-4">
                         <div class='thumbnail'>
-                            <a href="images/_DSC3481.jpg" class='lightbox'>
-                                <img src="images/_DSC3481.jpg" alt="Second image">
+                            <a href="images/_DSC3954.jpg" class='lightbox'>
+                                <img src="images/_DSC3954.jpg" alt="Second image">
                             </a>
                             <div class="caption">
-                                <h3>"Shanya"</h3>
+                                <h3>"Fold Bear"</h3>
                                 <p></p>
                             </div>
                         </div>
@@ -344,11 +350,11 @@
 
                     <div class="col-sm-6 col-md-4">
                         <div class='thumbnail'>
-                            <a href="images/_DSC3485.jpg" class='lightbox'>
-                                <img src="images/_DSC3485.jpg" alt="Third image">
+                            <a href="images/_DSC3961.jpg" class='lightbox'>
+                                <img src="images/_DSC3961.jpg" alt="Third image">
                             </a>
                             <div class="caption">
-                                <h3>"Shanya"</h3>
+                                <h3>"Fold Bear"</h3>
                                 <p></p>
                             </div>
                         </div>
