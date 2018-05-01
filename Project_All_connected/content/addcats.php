@@ -96,8 +96,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 // echo a message to say the UPDATE succeeded
                 ?><script>
-                                    var numbRec = <?php echo json_encode($stmt->rowCount()); ?>;
-                                    alert(numbRec + " record(s) UPDATED successfully");</script><?php
+                    var numbRec = <?php echo json_encode($stmt->rowCount()); ?>;
+                    alert(numbRec + " record(s) UPDATED successfully");</script><?php
                 if ($imgPath != "" && $imgPath != "images/") {
 
 
@@ -108,14 +108,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
                     ?><script>
 
-                                            alert(<?php
+                            alert(<?php
                     echo gettype($result);
                     echo $catId;
                     ?>);</script><?php
-                        if ($result > 0) {
-                            ?><script>
+                    if ($result > 0) {
+                        ?><script>
 
-                                                        alert(<?php echo $imgPath; ?>);</script><?php
+                                alert(<?php echo $imgPath; ?>);</script><?php
                         $stmt = $conn->prepare("UPDATE  catsimages SET image=" . $imgPath . "WHERE catId=" . $catId . ";");
 
 
@@ -150,24 +150,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 
+<link rel="stylesheet" type="text/css" href="styles/contact.css"/>
+<div class="aboutMain aboutEven">
+    <div class="registrationFrame notMoving">
 
-<div id="regMain">
-    <table >
-        <tr >
-            <td style="position: absolute; left:  15%; top: 15%">
-                <div >
-                    <h1 class="title">Add a cat</h1>
-                    <p>* required fields</p>
-                    <form name="addcats" id="addcats" method="post" action="cats.php?content=addcats" autocomplete="off" enctype="multipart/form-data">  
+        <h1 class="title textCenter">Add a cat</h1>
+        <small class="emailHelp" class="">* required fields</small>
+        <form name="addcats" id="addcats" method="post" action="cats.php?content=addcats" autocomplete="off" enctype="multipart/form-data">  
+            <div id="container" class="container">
+
+                <div class="row row-eq-height adoptedSpace">
+                    <div class="box col-sm-12 col-md-6">
                         <label class="formLabel" for="catId" >Cat Id:</label><br/>
-                        <input class="formLabel" type="text" name="catId" id="catId" maxlength="10" size="25" value="..."><br/>
+                        <input class="formLabel" type="text" name="catId" id="catId" maxlength="10" size="30" value="..."><br/>
                         <span class="error"> <?php echo $idErr; ?></span><br/>
                         <label class="formLabel" for="name" >Name*:</label><br/>
-                        <input class="formLabel" type="text" name="name" id="name" required="required"  maxlength="100" size="25" ><br/>
+                        <input class="formLabel" type="text" name="name" id="name" required="required"  maxlength="100" size="30" ><br/>
                         <span class="error"> <?php echo $nameErr; ?></span><br/>
 
                         <label class="formLabel" for="name" >DOB*:</label><br/>
-                        <input class="formLabel" type="date" name="dob" id="dob" required="required" ><br/>
+                        <input class="formLabel" type="date" name="dob" id="dob" required="required" size="30"><br/>
 
                         <label class="formLabel" for="checkb" >Vaccine A*:</label>
                         <input type="checkbox" id="checkb"  name="checkb" <?php
@@ -195,12 +197,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         ?>><br/>
 
                         <label class="formLabel" for="avDate" >Availability Date:</label><br/>
-                        <input class="formLabel" type="date" name="avDate" id="avDate"   ><br/>
+                        <input class="formLabel" type="date" name="avDate" id="avDate"  size="30" ><br/>
 
                         <label class="formLabel" for="adDate" >Adoption Date:</label><br/>
-                        <input class="formLabel" type="date" name="adDate" id="adDate"   ><br/>
+                        <input class="formLabel" type="date" name="adDate" id="adDate"  size="30" ><br/>
 
-                        <label for="fileupload"> Select an image to upload</label><br/>
+                        <label for="fileupload"> Select an image to upload:</label><br/>
                         <input type="file" name="fileupload" id="fileupload" accept="image/*" onchange="loadFile(event)"><br/>
                         <img id="output" width="100" height="100"/><br/><br/>
                         <script>
@@ -214,100 +216,100 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <input type="radio" name="gender" value="female"> Female<br>
 
                         <label for='description'>Description:</label><br>
-                        <textarea rows="5" cols="40" name="description" id="description"></textarea><br>
+                        <textarea rows="5" cols="30" name="description" id="description"></textarea><br>
 
                         <label class="formLabel" for="checkb" >Delete the cat?</label>
                         <input type="checkbox" id="checkb"  name="checkb" ><br/>
 
                         <button type="submit" id="submit" name="submit">Save</button>
-                    </form><br/>
+                        </form><br/>
 
-                </div>
-            </td>
-            <td style="position: absolute; right: 15%; top: 15%">
-                <div >
-                    <h1>Edit cat data</h1>
-                    <?php
-                    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-                    $conn = new mysqli($servername, $username1, $password1, $dbname);
+                    </div>
+
+                    <div class="box col-sm-12 col-md-6">
+                        <label>Edit cat data:</label>
+                        <?php
+                        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+                        $conn = new mysqli($servername, $username1, $password1, $dbname);
 // Check connection
-                    if ($conn->connect_error) {
-                        die("Connection failed: " . $conn->connect_error);
-                    }
+                        if ($conn->connect_error) {
+                            die("Connection failed: " . $conn->connect_error);
+                        }
 
-                    $sql = "SELECT cats.id, name, dob, vaccineA, vaccineB, deworming, availabilityDate, "
-                            . "adoptionDate, gender, description, image FROM cats LEFT JOIN catsimages ON cats.id=catsimages.catId";
-                    $result = $conn->query($sql);
+                        $sql = "SELECT cats.id, name, dob, vaccineA, vaccineB, deworming, availabilityDate, "
+                                . "adoptionDate, gender, description, image FROM cats LEFT JOIN catsimages ON cats.id=catsimages.catId";
+                        $result = $conn->query($sql);
 
-                    if ($result->num_rows > 0) {
-                        echo '<select id="list" onchange="getSelectValue();">';
-                        // output data of each row
-                        while ($row = $result->fetch_assoc()) {
+                        if ($result->num_rows > 0) {
+                            echo '<select id="list" onchange="getSelectValue();">';
+                            // output data of each row
+                            while ($row = $result->fetch_assoc()) {
 //                            echo "<p   id='" . $row['name'] . "' onclick='myFunction(this.id);' >"."<span style='visibility:hidden'>". "#" . $row['id'] . " Name: " . $row['name'] ."DOB: " . $row['dob'] .
 //                            "Vaccine A: " . $row['vaccineA'] . "Vaccine B: " . $row['vaccineB'] . "Deworming: " . $row['deworming'] .
 //                            "Availability Date: " . $row['availabilityDate'] . "Adoption Date: " . $row['adoptionDate'] .
 //                            "Gender: " . $row['gender'] . "Description: " . $row['description'] . '</span>' . "</p>";
-                            echo "<option value='" . "#" . $row['id'] . " Name: " . $row['name'] . "DOB: " . $row['dob'] .
-                            "Vaccine A: " . $row['vaccineA'] . "Vaccine B: " . $row['vaccineB'] . "Deworming: " . $row['deworming'] .
-                            "Availability Date: " . $row['availabilityDate'] . "Adoption Date: " . $row['adoptionDate'] .
-                            "Gender: " . $row['gender'] . "Description: " . $row['description'] . "Image Path: " . $row['image'] . "label=''" . "' >" . $row['id'] . "." . $row['name'] . "</option>";
-                        }
-                        echo "</select>";
-                    } else {
-                        ?><script>alert("0 cats")</script><?php
-                    }
-
-
-                    $conn->close();
-                    ?>
-                    <script>
-
-                        function getSelectValue() {
-
-                            var x = document.getElementById("list").value;
-                            document.getElementById("catId").value = x.substring(x.lastIndexOf("#") + 1, x.lastIndexOf(" Name: "));
-                            document.getElementById("name").value = x.substring(x.lastIndexOf("Name: ") + 6, x.lastIndexOf("DOB: "));
-                            document.getElementById("dob").value = x.substring(x.lastIndexOf("DOB: ") + 5, x.lastIndexOf("Vaccine A: "));
-
-
-
-                            var temp = x.substring(x.lastIndexOf("A: ") + 3, x.lastIndexOf("Vaccine B: "));
-                            var temp2 = (temp == 0) ? false : true;
-                            document.getElementById("checkb").checked = temp2;
-
-                            var temp3 = x.substring(x.lastIndexOf("B: ") + 3, x.lastIndexOf("Deworming:"));
-                            var temp4 = (temp3 == 0) ? false : true;
-                            document.getElementById("checkb2").checked = temp4;
-
-                            var temp5 = x.substring(x.lastIndexOf("Deworming: ") + 11, x.lastIndexOf("Availability"));
-                            var temp6 = (temp5 == 0) ? false : true;
-                            document.getElementById("checkb3").checked = temp6;
-
-
-                            document.getElementById("avDate").value = x.substring(x.lastIndexOf("Availability Date: ") + 19, x.lastIndexOf("Adoption"));
-                            document.getElementById("adDate").value = x.substring(x.lastIndexOf("Adoption Date: ") + 15, x.lastIndexOf("Gender"));
-
-                            var temp7 = x.substring(x.lastIndexOf("Gender: ") + 8, x.lastIndexOf("Description: "));
-                            var temp8 = (temp7 == "male") ? true : false;
-                            if (temp8) {
-                                document.addcats.gender[0].checked = true;
-                            } else {
-                                document.addcats.gender[1].checked = true;
+                                echo "<option value='" . "#" . $row['id'] . " Name: " . $row['name'] . "DOB: " . $row['dob'] .
+                                "Vaccine A: " . $row['vaccineA'] . "Vaccine B: " . $row['vaccineB'] . "Deworming: " . $row['deworming'] .
+                                "Availability Date: " . $row['availabilityDate'] . "Adoption Date: " . $row['adoptionDate'] .
+                                "Gender: " . $row['gender'] . "Description: " . $row['description'] . "Image Path: " . $row['image'] . "label=''" . "' >" . $row['id'] . "." . $row['name'] . "</option>";
                             }
-
-                            document.getElementById("description").value = x.substring(x.lastIndexOf("Description: ") + 13, x.lastIndexOf("Image Path:"));
-
-                            var path = x.substring(x.lastIndexOf("Image Path: ") + 12, x.lastIndexOf("label"));
-                            document.getElementById("output").src = path;
-                            //document.getElementById("fileupload").value = "path.jpg";
+                            echo "</select>";
+                        } else {
+                            ?><script>alert("0 cats")</script><?php
                         }
-                    </script>
+
+
+                        $conn->close();
+                        ?>
+                        <script>
+
+                            function getSelectValue() {
+
+                                var x = document.getElementById("list").value;
+                                document.getElementById("catId").value = x.substring(x.lastIndexOf("#") + 1, x.lastIndexOf(" Name: "));
+                                document.getElementById("name").value = x.substring(x.lastIndexOf("Name: ") + 6, x.lastIndexOf("DOB: "));
+                                document.getElementById("dob").value = x.substring(x.lastIndexOf("DOB: ") + 5, x.lastIndexOf("Vaccine A: "));
+
+
+
+                                var temp = x.substring(x.lastIndexOf("A: ") + 3, x.lastIndexOf("Vaccine B: "));
+                                var temp2 = (temp == 0) ? false : true;
+                                document.getElementById("checkb").checked = temp2;
+
+                                var temp3 = x.substring(x.lastIndexOf("B: ") + 3, x.lastIndexOf("Deworming:"));
+                                var temp4 = (temp3 == 0) ? false : true;
+                                document.getElementById("checkb2").checked = temp4;
+
+                                var temp5 = x.substring(x.lastIndexOf("Deworming: ") + 11, x.lastIndexOf("Availability"));
+                                var temp6 = (temp5 == 0) ? false : true;
+                                document.getElementById("checkb3").checked = temp6;
+
+
+                                document.getElementById("avDate").value = x.substring(x.lastIndexOf("Availability Date: ") + 19, x.lastIndexOf("Adoption"));
+                                document.getElementById("adDate").value = x.substring(x.lastIndexOf("Adoption Date: ") + 15, x.lastIndexOf("Gender"));
+
+                                var temp7 = x.substring(x.lastIndexOf("Gender: ") + 8, x.lastIndexOf("Description: "));
+                                var temp8 = (temp7 == "male") ? true : false;
+                                if (temp8) {
+                                    document.addcats.gender[0].checked = true;
+                                } else {
+                                    document.addcats.gender[1].checked = true;
+                                }
+
+                                document.getElementById("description").value = x.substring(x.lastIndexOf("Description: ") + 13, x.lastIndexOf("Image Path:"));
+
+                                var path = x.substring(x.lastIndexOf("Image Path: ") + 12, x.lastIndexOf("label"));
+                                document.getElementById("output").src = path;
+                                //document.getElementById("fileupload").value = "path.jpg";
+                            }
+                        </script>
+
+                    </div>
 
                 </div>
-            </td>
-        </tr>
-    </table>
+            </div>
 
+    </div>
 </div>
 
 
