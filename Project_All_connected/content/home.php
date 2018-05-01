@@ -7,41 +7,47 @@
         </video>
         <div>
           <svg class="arrows">
-        							<path class="a1" d="M0 0 L30 32 L60 0"></path>
-        							<path class="a2" d="M0 20 L30 52 L60 20"></path>
-        							<path class="a3" d="M0 40 L30 72 L60 40"></path>
         						</svg>
         </div>
         
-        <section>
+        <section class="pop">
 
-            <div class="insidePhoto">
-                <h1 class="shadowPlay tween-looper moving">Are you searching for the prefect companion?</h1>
+            <div class="insideWhite textCenter">
+           <h1>“Cats choose us; we don’t own them.” </br>
+               <span class="reference">~ Kristin Cast (author, House of Night series) ~</span>
+                </h1>
+                <h1> “I love cats because I enjoy my home; and little by little, they become its visible soul.” </br>
+                    <span class="reference">~ Jean Cocteau (director, Orpheus) ~</span></h1>
+                    <h1>“If a dog jumps into your lap it is because he is fond of you; but if a cat does the same thing it is because your lap is warmer.”</br>
+                <span class="reference">~ A.N. Whitehead (mathematician and philosopher) ~</span></h1>
             </div>
 
         </section>
 
         <section>
-            <div class="insideWhite textCenter">
-                <h1>Time spent with cats is never wasted. </br><span class="reference">~ Sigmund Freud ~</span>
-                </h1>
-                <h1> Cats are intended to teach us that not everything in nature has a function. </br>
-                    <span class="reference">~ Garrison Keillor ~</span></h1>
-                <h1></h1>
+            <div class="insidePhoto textCenter">
+                 <h1 class="shadowPlay tween-looper moving">Are you searching for the prefect companion?</h1>
+                
             </div>
         </section>
 
         <section class="pop">
-            <h1>Something here</h1>
-            <h1>Something here agian<sup>2</sup></h1>
-            <h1>Something here again again</h1>
+            <div class="insideWhite textCenter">
+           <h1>"Time spent with cats is never wasted." </br>
+               <span class="reference">~ Sigmund Freud (psychoanalyst) ~</span>
+                </h1>
+                <h1> "Cats are intended to teach us that not everything in nature has a function." </br>
+                    <span class="reference">~ Garrison Keillor ~</span></h1>
+                    <h1> “The smallest feline is a masterpiece.” </br>
+                <span class="reference">~ Leonardo da Vinci (artist, Mona Lisa) ~</span></h1>
+            </div>
         </section>
 
         <section>
-            <h1>Something else.</h1>
+           
         </section>
 
         <section>
-            <h1>Anything you wish to put here.</h1>
-            <small class="signature">Designed, developed, filmed and photographed by Loritta</small>
+            
+            <small class="signature">Designed, developed, filmed and photographed by , Dmitrii and Larisa</small>
         </section>
