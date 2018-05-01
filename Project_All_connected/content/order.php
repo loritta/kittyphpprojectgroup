@@ -12,7 +12,10 @@
 
         <h1 class="title textCenter">YOUR ORDER</h1>
        
-<?php
+
+    
+    </div>
+    <?php
 
 
 
@@ -49,21 +52,32 @@ $sql = ("SELECT name, availabilityDate, cost FROM cats JOIN"
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "<table style='width:90%'><tr><th>Name</th><th>Availability</th><th>Cost</th></tr>";
+    echo "<table id='myTab' style='width:70%'><tr style='font-size:1.5em;font-family: Comic Sans MS, cursive, sans-serif;'><th>Name</th><th>Availability</th><th>Cost</th></tr>";
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<tr><td>".$row["name"]."</td><td>".$row["availabilityDate"]."</td><td>".$row["cost"]."</td></tr>";
+        echo "<tr ><td>".$row["name"]."</td><td>".$row["availabilityDate"]."</td><td>".$row["cost"]."</td></tr>";
     }
     echo "</table>";
+   
+    
 } else {
      ?><script>alert("Your order is empty!");
-        </script> //<?php
+        </script> <?php
 }
 $conn->close();
      
-
  }
 ?> 
-    
-    </div>
+        <p><b>TOTAL:</b> <span id="total"></span>$</p>
 </div>
+ <script>
+     var total=0;
+ var table = document.getElementById('myTab');
+    for (var r = 1, n = table.rows.length; r < n; r++) {
+        for (var c = 2, m = table.rows[r].cells.length; c < 3; c++) {
+            total=total+parseFloat(table.rows[r].cells[c].innerHTML);
+        }
+    }
+
+document.getElementById('total').innerHTML=total+"";
+ </script>
