@@ -339,7 +339,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <div class='para registration' >
 
                                 
-                                <div class='pwdwidgetdiv' class="formLabel registration" id='thepwddiv'></div>
+                                <div class='pwdwidgetdiv' class="formLabel registration" id='thepwddiv' style="padding-left: 29%"></div>
                                 <script  type="text/javascript" >
                                     var pwdwidget = new PasswordWidget('thepwddiv', 'regpwd');
                                     pwdwidget.MakePWDWidget();
@@ -349,10 +349,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <input type='password' class="formLabel login" id='regpwd' name='regpwd' required="required" maxlength="30" size="35" value="<?php echo $passW; ?>"/>
 
                                 </noscript>
-                            </div>
+                            </div><br/>
 
                             <label class="formLabel" for="confPassword" >Confirmation*:</label><br/>
-                            <input class="formLabel registration" type="password" name="confPassword" id="confPassword" required="required" maxlength="30" >
+                            <input class="formLabel registration" type="password" name="confPassword" id="confPassword" required="required" maxlength="30" size="16">
                             <span class="error"> <?php echo $passErr; ?></span><br/><br/>
 
                             <label class="formLabel" for="checkb" >Are you a breeder?</label>
