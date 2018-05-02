@@ -1,7 +1,7 @@
 <?php
 
 ?>
- <video poster="../images/_DSC3553.jpg" id="bgvid" playsinline autoplay muted loop>
+ <video poster="images/_DSC3415.jpg" id="bgvid" playsinline autoplay muted loop>
 
             <source src="media/ChanyaStable.mp4" type="video/mp4">
         </video>

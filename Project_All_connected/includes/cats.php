@@ -30,7 +30,6 @@ require_once 'includes/function.php';
         <link rel="STYLESHEET" type="text/css" href="styles/pwdwidget.css" />
         <script src="scripts/pwdwidget.js" type="text/javascript"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="scripts/nav.js" type="text/javascript"></script>
     </head>
     <body>
         <header>
@@ -137,15 +136,15 @@ if (isset($_SESSION['username'])) {
          <div class="footer">
             
             <small class="signature">Designed, developed, filmed and photographed by Chris, Dmitrii and Larisa 2018</small>
-        <?php $con= Database::getConnection();
-                if($result=$con->query('select database() ')){
-                        $row =$result->fetch_array(MYSQLI_NUM);
-                echo '<p>*** Using Database '. $row[0].' ***</p>';
-                        
-                }
-                ?>
-         
-         </div>
-        
+        </div>
+        <script>
+            function openNav() {
+                document.getElementById("myNav").style.display = "block";
+            }
+
+            function closeNav() {
+                document.getElementById("myNav").style.display = "none";
+            }
+        </script>
     </body>
 </html>
