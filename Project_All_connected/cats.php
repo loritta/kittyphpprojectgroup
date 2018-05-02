@@ -130,6 +130,51 @@ if (isset($_SESSION['username'])) {
                 ?>
 
             </div>
+			<?php
+                if (isset($_SESSION['username'])) {
+                    if ($_SESSION['username'] != 'admin') {
+                        $servername = "den1.mysql2.gear.host";
+$username = "phpcats";
+$password = "Ii0EExX_H~yx";
+$dbname = "phpcats";
+$GLOBALS['userId']=0;
+ 
+
+    
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+$sql = ("SELECT id FROM users WHERE username='".$_SESSION['username']."';"); 
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+   
+   
+    while($row = $result->fetch_assoc()) {
+      $GLOBALS['userId']= $row["id"];
+    }
+   
+}
+
+
+$sql = ("SELECT name, availabilityDate, cost FROM cats JOIN"
+            . " orders ON cats.orderId=orders.id WHERE userId='".$GLOBALS['userId']."';"); 
+$result = $conn->query($sql);
+$SESSION['cartItems']=$result->num_rows;
+                        
+                        
+                        
+                   
+                    echo "<p class='username' style='font-size:1.5em'><a  href='cats.php?content=order'> "
+. "<img src='images/Shoping_Cart.png' width='5%' height='5%' alt='Cart'></a><b>"." ".$SESSION['cartItems']."</b></p>";
+                }
+                
+                    }
+                ?>
         </header>
         <div id="home">
 <?php loadContent('content', 'home'); ?>
