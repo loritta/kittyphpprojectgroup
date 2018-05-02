@@ -114,39 +114,39 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class="row row-eq-height adoptedSpace">
                         <div class="box col-sm-12 col-md-6">
                             <label class="formLabel" for="name" >Name*:</label><br/>
-                            <input class=" registration" type="text" name="name" id="name" required="required"  maxlength="100" size="35" value="<?php echo $name; ?>"><br/>
+                            <input class="formLabel" type="text" name="name" id="name" required="required"  maxlength="100" size="35" value="<?php echo $name; ?>"><br/>
                             <span class="error"> <?php echo $nameErr; ?></span><br/>
 
 
                             <label class="formLabel" for="username" >User name*:</label><br/>
-                            <input class="formLabel registration" type="text" name="username" id="username" required="required"  maxlength="30" size="35" value="<?php echo $uName; ?>"><br/>
+                            <input class="formLabel" type="text" name="username" id="username" required="required"  maxlength="30" size="35" value="<?php echo $uName; ?>"><br/>
                             <br/>
 
                             <label class="formLabel" for="address" >Address*:</label><br/>
-                            <input class="formLabel registration" type="text" name="address" id="address" required="required"  maxlength="100" size="35" value="<?php echo $addr; ?>"><br/>
+                            <input class="formLabel" type="text" name="address" id="address" required="required"  maxlength="100" size="35" value="<?php echo $addr; ?>"><br/>
                             <br/>
                             <label class="formLabel" for="city" >City*:</label><br/>
-                            <input class="formLabel registration" type="text" name="city" id="city" required="required"  maxlength="45" size="35" value="<?php echo $city; ?>"><br/>
+                            <input class="formLabel" type="text" name="city" id="city" required="required"  maxlength="45" size="35" value="<?php echo $city; ?>"><br/>
                             <span class="error"> <?php echo $cityErr; ?></span><br/>
 
                             <label class="formLabel" for="province" >Province*:</label><br/>
-                            <input class="formLabel registration" type="text" name="province" id="province" required="required"  maxlength="45" size="35" value="<?php echo $province; ?>"><br/>
+                            <input class="formLabel" type="text" name="province" id="province" required="required"  maxlength="45" size="35" value="<?php echo $province; ?>"><br/>
                             <span class="error"> <?php echo $prErr; ?></span><br/>
 
                             <label class="formLabel" for="pCode" >Postal code*:</label><br/>
-                            <input class="formLabel registration" type="text" name="pCode" id="pCode" required="required"  maxlength="10" size="35" value="<?php echo $pCode; ?>"><br/>
+                            <input class="formLabel" type="text" name="pCode" id="pCode" required="required"  maxlength="10" size="35" value="<?php echo $pCode; ?>"><br/>
                         </div>
 
                         <div class="box col-sm-12 col-md-6">
 
                             <label class="formLabel" for="email" >Email*:</label><br/>
-                            <input class="formLabel registration" type="text" name="email" id="email" required="required"  maxlength="100" size="35" value="<?php echo $email; ?>"><br/>
+                            <input class="formLabel" type="text" name="email" id="email" required="required"  maxlength="100" size="35" value="<?php echo $email; ?>"><br/>
                             <span class="error"> <?php echo $emailErr; ?></span><br/>
                             <label class="formLabel" for="phone" >Phone:</label><br/>
-                            <input class="formLabel registration" type="text" name="phone" id="phone" maxlength="20" size="35" value="<?php echo $phone; ?>"><br/>
+                            <input class="formLabel" type="text" name="phone" id="phone" maxlength="20" size="35" value="<?php echo $phone; ?>"><br/>
                             <span class="error"> <?php echo $phErr; ?></span><br/>
                             <label class="formLabel" for="country">Country*:</label><br/>
-                            <select class="formLabel registration" id="country" name="country">
+                            <select class="formLabel" id="country" name="country">
 
                                 <option value="Afghanistan">Afghanistan</option>
                                 <option value="Albania">Albania</option>
@@ -336,7 +336,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <option value="Zimbabwe">Zimbabwe</option>
                             </select><br/><br/>
                             <label for='regpwd' >Password*:</label> <br/>
-                            <div class='para registration' >
+                            <div class='para' >
 
                                 
                                 <div class='pwdwidgetdiv' class="formLabel registration" id='thepwddiv' style="padding-left: 29%"></div>
@@ -352,7 +352,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             </div><br/>
 
                             <label class="formLabel" for="confPassword" >Confirmation*:</label><br/>
-                            <input class="formLabel registration" type="password" name="confPassword" id="confPassword" required="required" maxlength="30" size="16">
+                            <input class="formLabel" type="password" name="confPassword" id="confPassword" required="required" maxlength="30" size="16">
                             <span class="error"> <?php echo $passErr; ?></span><br/><br/>
 
                             <label class="formLabel" for="checkb" >Are you a breeder?</label>
