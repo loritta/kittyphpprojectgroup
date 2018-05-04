@@ -424,6 +424,25 @@ input.contact, .contact textarea, input.registration{
     float:right;
     display:block;
 }
+.cart{
+    float:left;
+    z-index: 5;
+    position: Absolute;
+    top:25vh;
+    left:9vh;
+    margin:0;
+}
+
+.cart p{
+    color:#48535d;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight:100;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    font-size: 1.9rem;
+    margin: 0;
+    padding: 0;
+}
 
 
 

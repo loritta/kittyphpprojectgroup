@@ -169,8 +169,8 @@ $SESSION['cartItems']=$result->num_rows;
                         
                         
                    
-                    echo "<p class='username' style='font-size:1.5em'><a  href='cats.php?content=order'> "
-. "<img src='images/Shoping_Cart.png' width='5%' height='5%' alt='Cart'></a><b>"." ".$SESSION['cartItems']."</b></p>";
+                    echo "<div class='cart'><p style='font-size:1.5em'><a  href='cats.php?content=order'> "
+. "<img src='images/Shoping_Cart.png' width='5%' height='5%' alt='Cart'></a><b>"." ".$SESSION['cartItems']."</b></p></div>";
                 }
                 
                     }
@@ -182,13 +182,7 @@ $SESSION['cartItems']=$result->num_rows;
          <div class="footer">
             
             <small class="signature">Designed, developed, filmed and photographed by Chris, Dmitrii and Larisa 2018</small>
-        <?php $con= Database::getConnection();
-                if($result=$con->query('select database() ')){
-                        $row =$result->fetch_array(MYSQLI_NUM);
-                echo '<p>*** Using Database '. $row[0].' ***</p>';
-                        
-                }
-                ?>
+        
          
          </div>
         
